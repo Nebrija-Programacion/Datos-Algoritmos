@@ -14,12 +14,13 @@
    
 
 ## Sesión 3
- - 28 Enero 2019
+ - 30 Enero 2019
  - Listas simples
    - Acceder a elementos por índice
    - Eliminar elementos por índice
 
 ## Sesión 4
- - 30 Enero 2019
- - Ejercicio en clase Listas simples
-   - Eliminar elementos duplicados
+ - 4 Febrero 2019
+ - Ejemplos de ejercicios con Listas Simples
+   - Eliminar elementos duplicados.
+   - Obtener sublista compliendo criterio.
