@@ -21,5 +21,5 @@
 
 ## Sesión 4
  - 30 Enero 2019
- - Ejercicio Listas simples
+ - Ejercicio en clase Listas simples
    - Eliminar elementos duplicados
