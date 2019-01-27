@@ -2,7 +2,7 @@
 
 ## Sesión 1 
  - 23 Enero 2019
- - (Punteros)[https://codebin.cc/2018/11/11/leccion-14-punteros/]
+ - [Punteros](https://codebin.cc/2018/11/11/leccion-14-punteros/)
  
 ## Sesión 2
  - 25 Enero 2019
