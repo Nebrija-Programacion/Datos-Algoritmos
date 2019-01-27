@@ -7,7 +7,7 @@
 ## Sesión 2
  - 25 Enero 2019
  - Listas simples
-   - Creación de una lista simple
+   - [Creación de una lista simple](https://codebin.cc/2019/01/27/les-creacion/)
    - Añadir elementos
    - Buscar elementos
    - Eliminar elementos

@@ -9,6 +9,7 @@ Crear una lista enlazada simple de números enteros que contenga las siguientes 
   - **erase(i)** - Elimina el elemento de índice i
   - **remove_duplicates** - Devuelve una nueva lista eliminando los elementos duplicados.
   - **move(i, j)** - Mueve el elemento i a la posición j
+  - **print** - Imprime todos los elementos de la lista
 
 El programa principal debe mostrar un menú con todas estas opciones.
 
