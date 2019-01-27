@@ -1,4 +1,4 @@
-# Datos-Algoritmos
+# Estructura de Datos y Algoritmos
 
 ## Sesión 1 
  - 23 Enero 2019
