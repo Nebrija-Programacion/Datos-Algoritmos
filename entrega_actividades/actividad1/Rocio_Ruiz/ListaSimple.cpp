@@ -6,7 +6,7 @@
 //  Copyright © 2019 Rocio Ruiz Ruiz. All rights reserved.
 //
 
-#include "ListaSimple.hpp"
+#include <Listasimple.h>
 
 using namespace std;
 
@@ -91,7 +91,7 @@ void ListaSimple::move(int i, int j){   // i no puede ser 1;
 
 
 //ListaSimple *ListaSimple::remove_duplicates(){
-    
+
 //}
 
 //    SEARCH No recursivo ---------------
@@ -105,7 +105,6 @@ void ListaSimple::move(int i, int j){   // i no puede ser 1;
 //    return i;
 
 
-    
+
 
 }
-

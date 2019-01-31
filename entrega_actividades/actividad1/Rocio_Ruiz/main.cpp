@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "ListaSimple.hpp"
+#include <Listasimple.h>
 
 using namespace std;
 int menu(){
@@ -23,11 +23,11 @@ int menu(){
     cout << "0: SALIR "                                 << endl;
     cout << "----------------------------------------"  << endl;
     cin  >> option;
-    
+
     return option;
 }
 int main() {
-    
+
     int option;
     ListaSimple * head = new ListaSimple{0};
 
