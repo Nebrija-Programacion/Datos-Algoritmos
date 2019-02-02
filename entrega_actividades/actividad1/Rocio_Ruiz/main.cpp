@@ -1,27 +1,19 @@
-//
-//  main.cpp
-//  Listas_Simples_Enlazadas
-//
-//  Created by Rocio Ruiz Ruiz on 27/1/19.
-//  Copyright © 2019 Rocio Ruiz Ruiz. All rights reserved.
-//
-
 #include <iostream>
-#include <Listasimple.h>
+#include "ListaSimple.h"
 
 using namespace std;
 int menu(){
     int option;
-    cout << "----------------------------------------"  << endl;
-    cout << "1: Anadir al final "                       << endl;
-    cout << "2: Añadir al principio "                   << endl;
-    cout << "3: Buscar por indice (devuelve puntero) "  << endl;
-    cout << "4: Buscar por elemento (devuelve indice)"  << endl;
-    cout << "5: Eliminar por posicion "                 << endl;
-    cout << "6: Mover "                                 << endl;
-    cout << "7: Imprimir lista "                        << endl;
-    cout << "0: SALIR "                                 << endl;
-    cout << "----------------------------------------"  << endl;
+    cout << "----------------------------------------------       "  << endl;
+    cout << "1: Anadir numero entero al final de la lista         "  << endl;
+    cout << "2: Filtrar por elementos mayores de un numero        "  << endl;
+    cout << "3: Filtrar por elementos menores de un numero        "  << endl;
+    cout << "4: Filtrar por elementos iguales a un numero         "  << endl;
+    cout << "5: Filtrar por numeros dentro de un intervalo        "  << endl;
+    cout << "6: Eliminar toda la lista (liberando memoria)        "  << endl;
+    cout << "7: Imprimir lista                                    "  << endl;
+    cout << "0: SALIR                                             "  << endl;
+    cout << "----------------------------------------------       "  << endl;
     cin  >> option;
 
     return option;
@@ -34,10 +26,11 @@ int main() {
     do{
         option = menu();
         switch (option) {
-            case 1:
+
+            case 1: // Añadir un numero al final de la LISTA ----------------
             {
-                bool b{true};
-                while(b){
+                int b{1};
+                while (b){
                     int a;
                     cout << "Introduzca el numero que desee anadir. " << endl;
                     cin  >> a;
@@ -45,79 +38,88 @@ int main() {
                     cout << "¿Desea anadir algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
+                head->print();  // Imprimo la lista para comprobar
                 break;
             }
-            case 2:
+            case 2: // Filtrar elementos MAYORES que un numero --------------
             {
-                bool b{true};
+                ListaSimple *p;
+                int b{1};
                 while(b){
                     int a;
-                    cout << "Introduzca el numero que desee anadir. " << endl;
+                    cout << "Filtrar por numeros mayores a: " << endl;
                     cin  >> a;
-                    head->push_front(a);
-                    cout << "¿Desea anadir algun otro? En caso negativo pulse 0. " << endl;
+                    p = head->greater_than(a);
+                    p->print();                     // Imprimo la lista para ver resultados
+                    p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
+                    cout << "¿Desea filtrar a partir de algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
                 break;
             }
-            case 3:
+            case 3: // Filtrar elementos MENORES que un numero --------------
             {
-                bool b{true};
+                ListaSimple *p;
+                int b{1};
                 while(b){
                     int a;
-                    cout << "Introduzca la posicion(indice) que desee buscar. " << endl;
+                    cout << "Filtrar por numeros menores a: " << endl;
                     cin  >> a;
-                    cout << head->at(a) << endl;
-                    cout << "¿Desea buscar algun otro? En caso negativo pulse 0. " << endl;
+                    p = head->lesser_than(a);
+                    p->print();                     // Imprimo la lista para ver resultados
+                    p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
+                    cout << "¿Desea filtrar a partir de algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
                 break;
             }
-            case 4:
+            case 4: // Filtrar elementos IGUALES a un numero ----------------
             {
-                bool b{true};
+                ListaSimple *p;
+                int b{1};
                 while(b){
                     int a;
-                    cout << "Introduzca el elemento del que desee saber su posicion. " << endl;
+                    cout << "Filtrar por numeros coincidentes a: " << endl;
                     cin  >> a;
-                    cout << head->search(a) << endl;
-                    cout << "¿Desea buscar algun otro? En caso negativo pulse 0. " << endl;
+                    p = head->equal_to(a);
+                    p->print();                     // Imprimo la lista para ver resultados
+                    p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
+                    cout << "¿Desea filtar algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
                 break;
             }
-            case 5:
+            case 5: // Filtrar elementos en un INTERVALO --------------------
             {
-                bool b{true};
-                while(b){
-                    int a;
-                    cout << "Introduzca la posicion del elemento que desea borrar. " << endl;
-                    cin  >> a;
-                    head->erase(a);
-                    cout << "¿Desea borrar algun otro? En caso negativo pulse 0. " << endl;
-                    cin  >> b;
-                }
-                break;
-            }
-            case 6:
-            {
-                bool b{true};
+                ListaSimple *p;
+                int b{1};
                 while(b){
                     int i,j;
-                    cout << "Introduzca la posicion del elemento que desea mover. " << endl;
+                    cout << "Introduzca la primera coordenada del intervalo " << endl;
                     cin  >> i;
-                    cout << "Introduzca la posicion a la que desea moverlo. " << endl;
+                    cout << "Introduzca la segunda coordenada. " << endl;
                     cin  >> j;
-                    head->move(i, j);
-                    cout << "¿Desea mover algun otro? En caso negativo pulse 0. " << endl;
+                    p = head->within_interval(i, j);
+                    p->print();                     // Imprimo la lista para ver resultados
+                    p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
+                    cout << "¿Desea filtrar algun otro intervalo? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
                 break;
             }
-            case 7:
-                cout << "-------------------SU LISTA----------------" << endl;
-                head ->print();
+            case 6: // BORRAR TODA LA LISTA  ------------------------------
+            {
+                head->deleteAll();                // se borra todo incluyendo la cabeza HEAD ---------------------
+                head = new ListaSimple{0};        // se crea una nueva HEAD, con data=0; size=0; next=nullptr
+                head->print();                    // no debia salir nada -----
                 break;
+            }
+            case 7: // IMPRIMIR LA LISTA  --------------------
+            {
+                cout << "-------------------SU LISTA----------------" << endl;
+                head->print();
+                break;
+            }
             default:
                 option = 0;
                 break;
