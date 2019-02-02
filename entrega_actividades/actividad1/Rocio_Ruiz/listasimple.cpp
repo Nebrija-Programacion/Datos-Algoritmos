@@ -1,77 +1,106 @@
-#include "ListaSimple.h"
+//
+//  ListaSimple.cpp
+//  Listas_Simples_Enlazadas
+//
+//  Created by Rocio Ruiz Ruiz on 27/1/19.
+//  Copyright © 2019 Rocio Ruiz Ruiz. All rights reserved.
+//
+
+#include <Listasimple.h>
 
 using namespace std;
+
 ListaSimple::ListaSimple(int n){   // CONSTRUCTOR -----------
     data = n;
     next = nullptr;
-    size = 0;   // valor a CERO porque el HEAD no cuenta
+    size = 0;
 }
-
 void ListaSimple::push_back(int valor){
-    ListaSimple *punteroL1 = this;
-    while(punteroL1->next != nullptr) punteroL1 = punteroL1->next;  // me lleva hasta el ultimo
-    punteroL1->next = new ListaSimple(valor);
-    this->size++;                                                   // suma 1 al size en el HEAD
+    if(next){
+        next -> push_back(valor);
+    }else{
+        next = new ListaSimple(valor);
+    }
+}
+void ListaSimple::push_front(int valor){
+    ListaSimple *aux = new ListaSimple{valor};
+    aux->next = this->next;
+    this->next = aux;
+    this->size++;
 }
 
-ListaSimple * ListaSimple::greater_than(int value){
+ListaSimple * ListaSimple::at(int i){
+    ListaSimple *aux=this;
+    if (i<1 || i>size) return nullptr;  // ERROR -> no existe -> devuelve null
+    for(int j{1}; j <= i; j++){
+        aux = aux->next;                // si hay, avanza hasta la posicion
+    }
+    return aux;                         // devuelve aux, que es el que busca
+}
+
+int ListaSimple::search(int ele)const{
+    ListaSimple *puntero = this->next;
+    for(unsigned int i{1}; i <= size; i++){
+        if(puntero->data == ele) return i;
+        puntero = puntero->next;
+    }
+    return -1;
+}
+
+bool ListaSimple::erase(int j){
+    ListaSimple * aux = this, * prev = nullptr;
+    if(j < 1 || j > size) return false;
+    for(unsigned int i{1}; i <= j; i++){
+        prev = aux;
+        aux = aux->next;
+    }
+    prev->next = aux->next;
+    delete aux;
+    this->size--;
+    return true;
+}
+
+ListaSimple * ListaSimple::remove_duplicates(){
     ListaSimple *aux = new ListaSimple{0};
     ListaSimple *punteroL1 = this->next;
-    ListaSimple *punteroL2 = aux;
+    ListaSimple *punteroL2;
+    ListaSimple *previoL2;
     while(punteroL1 != nullptr){
-        if(punteroL1->getData() > value){
-            punteroL2->next = new ListaSimple{punteroL1->getData()};
-            punteroL2 = punteroL2->next;
+        punteroL2 = aux->next;
+        previoL2 = aux;
+        while(punteroL2 != nullptr && punteroL1->data != punteroL2->data){
+                previoL2 = punteroL2;
+                punteroL2 = punteroL2->next;
+        }
+        if(punteroL2 == nullptr){
+            previoL2->next = new ListaSimple{punteroL1->data};
         }
         punteroL1 = punteroL1->next;
     }
     return aux;
 }
-ListaSimple * ListaSimple::equal_to(int value){
-    ListaSimple *aux = new ListaSimple{0};
-    ListaSimple *punteroL1 = this->next;
-    ListaSimple *punteroL2 = aux;
-    while(punteroL1 != nullptr){
-        if(punteroL1->getData() == value){
-            punteroL2->next = new ListaSimple{punteroL1->getData()};
-            punteroL2 = punteroL2->next;
+
+void ListaSimple::move(int i, int j){   // i no puede ser 1;
+    int k{1};
+    ListaSimple * prev = nullptr, * nodo_i = nullptr;
+    ListaSimple * aux = this;
+    if (i > 2 || j < i) return;
+    while(k <= j){
+        if(k == i){
+            nodo_i = aux;
+            prev->next = aux->next;
         }
-        punteroL1 = punteroL1->next;
-    }
-    return aux;
-}
-ListaSimple * ListaSimple::lesser_than(int value){
-    ListaSimple *aux = new ListaSimple{0};
-    ListaSimple *punteroL1 = this->next;
-    ListaSimple *punteroL2 = aux;
-    while(punteroL1 != nullptr){
-        if(punteroL1->getData() < value){
-            punteroL2->next = new ListaSimple{punteroL1->getData()};
-            punteroL2 = punteroL2->next;
+        if(k == j){
+            nodo_i->next= aux->next;
+            aux->next = nodo_i;
         }
-        punteroL1 = punteroL1->next;
+        prev= aux;
+        aux = aux->next;
+        k++;
     }
-    return aux;
 }
-ListaSimple * ListaSimple::within_interval(int a, int b){
-    ListaSimple *aux = new ListaSimple{0};
-    ListaSimple *punteroL1 = this->next;
-    ListaSimple *punteroL2 = aux;
-    if(a > b) return aux;                                               // si a>b entonces devuelve un HEAD solo
-    while(punteroL1 != nullptr){
-        if(punteroL1->getData() >= a && punteroL1->getData() <= b){     // esta dentro del intervalo
-            punteroL2->next = new ListaSimple{punteroL1->getData()};
-            punteroL2 = punteroL2->next;
-        }
-        punteroL1 = punteroL1->next;
-    }
-    return aux;
-}
-void ListaSimple::deleteAll(){              // funcion RECURSIVA porque es muy ELEGANTE "*****"
-    if (next) next->deleteAll();
-    delete this;
-}
-void ListaSimple::print()const{
+
+void ListaSimple::printAll()const{
     ListaSimple *puntero = this->next;
     int i=0;
 
@@ -81,17 +110,31 @@ void ListaSimple::print()const{
         puntero = puntero->next;
     }
 }
-int ListaSimple::getData()const{
-    return data;
+
+void ListaSimple::deleteAll(){              // funcion RECURSIVA porque es muy ELEGANTE "*****"
+    if (next) next->deleteAll();
+    delete this;
 }
+
+
 ListaSimple * ListaSimple::getNext()const{
     return next;
 }
+int ListaSimple::getData()const{
+    return data;
+}
+
 void ListaSimple::setData(int i){
-    this->data = i;
+    data = i;
 }
 void ListaSimple::setNext(ListaSimple *puntero){
     this->next = puntero;
 }
+
+
+
+
+
+
 
 

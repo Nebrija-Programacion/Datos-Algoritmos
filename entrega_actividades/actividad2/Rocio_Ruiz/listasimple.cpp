@@ -8,13 +8,13 @@ ListaSimple::ListaSimple(int n){   // CONSTRUCTOR -----------
 }
 
 void ListaSimple::push_back(int valor){
-    ListaSimple *punteroL1 = this;
-    while(punteroL1->next != nullptr) punteroL1 = punteroL1->next;  // me lleva hasta el ultimo
-    punteroL1->next = new ListaSimple(valor);
-    this->size++;                                                   // suma 1 al size en el HEAD
+    if(next){
+        next -> push_back(valor);
+    }else{
+        next = new ListaSimple(valor);
+    }
 }
-
-ListaSimple * ListaSimple::greater_than(int value){
+ListaSimple * ListaSimple::greater_than(int value)const{
     ListaSimple *aux = new ListaSimple{0};
     ListaSimple *punteroL1 = this->next;
     ListaSimple *punteroL2 = aux;
@@ -27,7 +27,7 @@ ListaSimple * ListaSimple::greater_than(int value){
     }
     return aux;
 }
-ListaSimple * ListaSimple::equal_to(int value){
+ListaSimple * ListaSimple::equal_to(int value)const{
     ListaSimple *aux = new ListaSimple{0};
     ListaSimple *punteroL1 = this->next;
     ListaSimple *punteroL2 = aux;
@@ -40,7 +40,7 @@ ListaSimple * ListaSimple::equal_to(int value){
     }
     return aux;
 }
-ListaSimple * ListaSimple::lesser_than(int value){
+ListaSimple * ListaSimple::lesser_than(int value)const{
     ListaSimple *aux = new ListaSimple{0};
     ListaSimple *punteroL1 = this->next;
     ListaSimple *punteroL2 = aux;
@@ -53,7 +53,7 @@ ListaSimple * ListaSimple::lesser_than(int value){
     }
     return aux;
 }
-ListaSimple * ListaSimple::within_interval(int a, int b){
+ListaSimple * ListaSimple::within_interval(int a, int b)const{
     ListaSimple *aux = new ListaSimple{0};
     ListaSimple *punteroL1 = this->next;
     ListaSimple *punteroL2 = aux;
@@ -88,10 +88,10 @@ ListaSimple * ListaSimple::getNext()const{
     return next;
 }
 void ListaSimple::setData(int i){
-    this->data = i;
+    data = i;
 }
 void ListaSimple::setNext(ListaSimple *puntero){
-    this->next = puntero;
+    next = puntero;
 }
 
 
