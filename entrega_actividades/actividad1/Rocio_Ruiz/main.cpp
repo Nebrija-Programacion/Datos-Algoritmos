@@ -1,10 +1,8 @@
 //
 //  main.cpp
-//  Listas_Simples_Enlazadas
+//  ListaSimples
 //
-//  Created by Rocio Ruiz Ruiz on 27/1/19.
-//  Copyright © 2019 Rocio Ruiz Ruiz. All rights reserved.
-//
+
 
 #include <iostream>
 #include <Listasimple.h>
@@ -46,7 +44,7 @@ int main() {
                     cout << "¿Desea anadir algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
-                head->print();  // Imprimo la lista para comprobar
+                head->printAll();  // Imprimo la lista para comprobar
                 break;
             }
             case 2:  // Añadir un numero al PRINCIPIO de la lista ----------------
@@ -60,7 +58,7 @@ int main() {
                     cout << "¿Desea anadir algun otro? En caso negativo pulse 0. " << endl;
                     cin  >> b;
                 }
-                head->print();  // Imprimo la lista para comprobar
+                head->printAll();  // Imprimo la lista para comprobar
                 break;
             }
             case 3:  // Buscar por indice (devuelve puntero)  ------------------
@@ -100,7 +98,7 @@ int main() {
                     cout << "¿Desea borrar algun otro? En caso negativo pulse 0. " << endl;
                     cin  >> b;
                 }
-                head->print();  // Imprimo la lista para comprobar
+                head->printAll();  // Imprimo la lista para comprobar
                 break;
             }
             case 6:  // Mover un elemento de posicion  ----------------------
@@ -116,7 +114,7 @@ int main() {
                     cout << "¿Desea mover algun otro? En caso negativo pulse 0. " << endl;
                     cin  >> b;
                 }
-                head->print();  // Imprimo la lista para comprobar
+                head->printAll();  // Imprimo la lista para comprobar
                 break;
             }
             case 7:  // Elimina los duplicados ---------------------
@@ -125,13 +123,13 @@ int main() {
                 aux = head->remove_duplicates();    // creo una lista copia sin duplicados
                 head->deleteAll();                  // borro la lista con duplicados
                 head = aux;                         // digo que la lista sin es la antigua
-                head->print();                      // la pinto
+                head->printAll();                      // la pinto
                 break;
             }
             case 8:  // IMPRIMIR LA LISTA  --------------------
             {
                 cout << "-------------------SU LISTA----------------" << endl;
-                head->print();
+                head->printAll();
                 break;
             }
             default:

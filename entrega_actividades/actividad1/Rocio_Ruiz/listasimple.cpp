@@ -1,10 +1,6 @@
 //
-//  ListaSimple.cpp
-//  Listas_Simples_Enlazadas
-//
-//  Created by Rocio Ruiz Ruiz on 27/1/19.
-//  Copyright © 2019 Rocio Ruiz Ruiz. All rights reserved.
-//
+//ListaSimple class definition
+//-------------------
 
 #include <Listasimple.h>
 
@@ -29,10 +25,10 @@ void ListaSimple::push_front(int valor){
     this->size++;
 }
 
-ListaSimple * ListaSimple::at(int i){
+ListaSimple * ListaSimple::at(unsigned int i){
     ListaSimple *aux=this;
     if (i<1 || i>size) return nullptr;  // ERROR -> no existe -> devuelve null
-    for(int j{1}; j <= i; j++){
+    for(unsigned int j{1}; j <= i; j++){
         aux = aux->next;                // si hay, avanza hasta la posicion
     }
     return aux;                         // devuelve aux, que es el que busca
@@ -47,7 +43,7 @@ int ListaSimple::search(int ele)const{
     return -1;
 }
 
-bool ListaSimple::erase(int j){
+bool ListaSimple::erase(unsigned int j){
     ListaSimple * aux = this, * prev = nullptr;
     if(j < 1 || j > size) return false;
     for(unsigned int i{1}; i <= j; i++){
@@ -109,6 +105,11 @@ void ListaSimple::printAll()const{
         cout << ++i << ": " << puntero->getData() << endl;
         puntero = puntero->next;
     }
+}
+
+void ListaSimple::print()const{
+    if (next) next->print();
+    cout << data << endl;
 }
 
 void ListaSimple::deleteAll(){              // funcion RECURSIVA porque es muy ELEGANTE "*****"

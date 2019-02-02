@@ -1,3 +1,6 @@
+
+//ListaSimple class definition
+
 #include "ListaSimple.h"
 
 using namespace std;
@@ -67,11 +70,11 @@ ListaSimple * ListaSimple::within_interval(int a, int b)const{
     }
     return aux;
 }
-void ListaSimple::deleteAll(){              // funcion RECURSIVA porque es muy ELEGANTE "*****"
+void ListaSimple::deleteAll(){
     if (next) next->deleteAll();
     delete this;
 }
-void ListaSimple::print()const{
+void ListaSimple::printAll()const{
     ListaSimple *puntero = this->next;
     int i=0;
 
@@ -81,6 +84,11 @@ void ListaSimple::print()const{
         puntero = puntero->next;
     }
 }
+void ListaSimple::print()const{
+    if (next) next->print();
+    cout << data << endl;
+}
+
 int ListaSimple::getData()const{
     return data;
 }

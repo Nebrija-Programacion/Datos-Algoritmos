@@ -1,3 +1,6 @@
+
+//ListaSimple
+
 #include <iostream>
 #include "ListaSimple.h"
 
@@ -38,7 +41,7 @@ int main() {
                     cout << "¿Desea anadir algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
                 }
-                head->print();  // Imprimo la lista para comprobar
+                head->printAll();  // Imprimo la lista para comprobar
                 break;
             }
             case 2: // Filtrar elementos MAYORES que un numero --------------
@@ -50,7 +53,7 @@ int main() {
                     cout << "Filtrar por numeros mayores a: " << endl;
                     cin  >> a;
                     p = head->greater_than(a);
-                    p->print();                     // Imprimo la lista para ver resultados
+                    p->printAll();                     // Imprimo la lista para ver resultados
                     p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
                     cout << "¿Desea filtrar a partir de algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
@@ -66,7 +69,7 @@ int main() {
                     cout << "Filtrar por numeros menores a: " << endl;
                     cin  >> a;
                     p = head->lesser_than(a);
-                    p->print();                     // Imprimo la lista para ver resultados
+                    p->printAll();                     // Imprimo la lista para ver resultados
                     p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
                     cout << "¿Desea filtrar a partir de algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
@@ -82,7 +85,7 @@ int main() {
                     cout << "Filtrar por numeros coincidentes a: " << endl;
                     cin  >> a;
                     p = head->equal_to(a);
-                    p->print();                     // Imprimo la lista para ver resultados
+                    p->printAll();                     // Imprimo la lista para ver resultados
                     p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
                     cout << "¿Desea filtar algun otro? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
@@ -100,7 +103,7 @@ int main() {
                     cout << "Introduzca la segunda coordenada. " << endl;
                     cin  >> j;
                     p = head->within_interval(i, j);
-                    p->print();                     // Imprimo la lista para ver resultados
+                    p->printAll();                     // Imprimo la lista para ver resultados
                     p->deleteAll();                 // Borra toda la lista entera, incluida la HEAD
                     cout << "¿Desea filtrar algun otro intervalo? *Si: pulse 1.  *No: pulse 0. " << endl;
                     cin  >> b;
@@ -111,13 +114,13 @@ int main() {
             {
                 head->deleteAll();                // se borra todo incluyendo la cabeza HEAD ---------------------
                 head = new ListaSimple{0};        // se crea una nueva HEAD, con data=0; size=0; next=nullptr
-                head->print();                    // no debia salir nada -----
+                head->printAll();                    // no debia salir nada -----
                 break;
             }
             case 7: // IMPRIMIR LA LISTA  --------------------
             {
                 cout << "-------------------SU LISTA----------------" << endl;
-                head->print();
+                head->printAll();
                 break;
             }
             default:

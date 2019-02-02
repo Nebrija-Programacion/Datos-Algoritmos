@@ -1,4 +1,4 @@
-//
+//  ListaSimple Header
 //  ListaSimple.h
 //  ListaSimple
 //
@@ -15,7 +15,8 @@ class ListaSimple{
     public:
     ListaSimple(int n = 0);
     void push_back(int);                    // Añade un nuevo elemento al final de la lista
-    void print()const;                      // imprime la lista entera
+    void print()const;
+    void printAll()const;                   // imprime la lista entera
     ListaSimple * getNext()const;           // devuelve puntero al siguiente elemento
     int getData()const;                     // devuelve el dato
     void setData(int);                      // cambia el valor del Data
