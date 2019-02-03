@@ -70,17 +70,12 @@ void Alumno::push_front(int value)
         next = new Alumno(value);
         size++;
     }else{
-        if(next){
-                Alumno* pass = next->getNext();
-                next = new Alumno(value);
-                next->push_front(value);
-
-            }else{
-                value = pass;
-                Alumno* pass = next->getNext();
-                next = new Alumno(value);
-                size++;
-            }
+        Alumno* aux = next->getNext();
+        int valorr = aux->getID();
+        delete next;
+        next = new Alumno(value);
+        next->push_front(valorr);
+        size++;
         }
     }
 
