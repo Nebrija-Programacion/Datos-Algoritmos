@@ -7,8 +7,7 @@ using namespace  std;
 ListaInt::ListaInt(int _dato):
     dato{_dato},
     next{nullptr},
-    size{0},
-    index{0}
+    size{0}
 {
 
 }
@@ -19,14 +18,13 @@ void ListaInt::push_back(int value){
         next->push_back(value);
     }else{ // soy el ultimo elemento
         next = new ListaInt(value);
-        next->setIndex(index + 1);
     }
 
     // Incremento el tamano
     size++;
 }
 
-int ListaInt::getDato() const
+int & ListaInt::getDato()
 {
     return dato;
 }
@@ -41,28 +39,24 @@ int &ListaInt::at(unsigned int i)
 {
     if(i <= 0) throw string("out of bounds (starts with 1)");
     if(i > size) throw string("Out of bounds)");
-    if(next) return next->__at(i);
+    ListaInt * aux = next;
+    unsigned short index = 0;
+    while(aux){
+        index++;
+        if(index == i) return aux->getDato();
+        aux = aux->getNext();
+    }
+
     throw string("Unexpected error");
 }
 
-int &ListaInt::__at(unsigned int i)
+void ListaInt::print(int i) const
 {
-    if(index == i) return dato;
-    else if(next) return next->__at(i);
-    else throw string("Out of index");
-}
-
-void ListaInt::print() const
-{
-    cout << index << ": " << dato << endl;
-    if(next) next->print();
+    cout << i << ": " << dato << endl;
+    if(next) next->print(++i);
     else cout << endl;
 }
 
-void ListaInt::setIndex(unsigned short value)
-{
-    index = value;
-}
 
 ListaInt *ListaInt::search(int value) const
 {
