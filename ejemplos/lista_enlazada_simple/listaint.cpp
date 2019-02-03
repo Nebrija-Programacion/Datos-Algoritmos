@@ -37,16 +37,20 @@ void ListaInt::printAll() const
 
 int &ListaInt::at(unsigned int i)
 {
+    return refAt(i)->getDato();
+}
+
+ListaInt *ListaInt::refAt(unsigned int i) const
+{
     if(i <= 0) throw string("out of bounds (starts with 1)");
-    if(i > size) throw string("Out of bounds)");
+    if(i > size) throw string("Index is out of bounds");
     ListaInt * aux = next;
     unsigned short index = 0;
     while(aux){
         index++;
-        if(index == i) return aux->getDato();
+        if(index == i) return aux;
         aux = aux->getNext();
     }
-
     throw string("Unexpected error");
 }
 

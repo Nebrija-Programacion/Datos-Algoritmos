@@ -12,6 +12,7 @@ public:
     int &getDato();
     void printAll() const;
     int & at(unsigned int i);
+    ListaInt* refAt(unsigned int i) const;
     void setIndex(unsigned short value);
 
 private:
