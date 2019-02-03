@@ -17,8 +17,7 @@
  - 30 Enero 2019
  - Listas enlazadas simples
    - [Acceder a elementos por índice](https://codebin.cc/2019/01/27/4-listas-enlazadas-simples-acceder-por-indice/)
-   - [Eliminar elementos por índice](https://codebin.cc/2019/01/27/5-listas-enlazadas-simples-eliminar-por-indice/)
-   - [Iterar usando punteros](https://codebin.cc/2019/01/27/6-listas-enlazadas-simples-iterar-con-puntero/)
+
    
 ## Actividad para casa
   - [Actividad 1](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad1)
@@ -26,27 +25,30 @@
 
 ## Sesión 4
  - 4 Febrero 2019
- - Obtener sublistas cumpliendo criterio (filtrado)
+   - [Acceder a elementos por índice (II)](https://codebin.cc/2019/01/27/4-listas-enlazadas-simples-acceder-por-indice/)
+   
+## Sesión 5
+ - 6 Febrero 2019
+ - Clase Práctica
+   - [Eliminar elementos por índice](https://codebin.cc/2019/01/27/5-listas-enlazadas-simples-eliminar-por-indice/)
+   - [Iterar usando punteros](https://codebin.cc/2019/01/27/6-listas-enlazadas-simples-iterar-con-puntero/)
 
 ## Actividad para casa
   - [Actividad 2](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad2)
   - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad2)
 
-## Sesión 5
- - 6 Febrero 2019
- - [Lista doblemente enlazada]()
+## Sesión 6
+ - 11 Febrero 2019
+   - [Lista doblemente enlazada]()
    - Añadir elementos.
    - Buscar elementos.
    - Eliminar elementos.
    - Insertar elementos.
 
-## Sesión 6
- - 11 Febrero 2019
- - [Algoritmos de Ordenación - Burbuja]()
-
+ 
 ## Sesión 7
  - 13 Febrero 2019
- - [Algoritmos de Ordenación - Burbuja Bidireccional]()
+ - [Algoritmos de Ordenación - Burbuja]()
 
 
 ## Práctica 1
@@ -56,8 +58,12 @@
   
 ## Sesión 8
  - 18 Febrero 2019
- - [Algoritmos de Ordenación - Inserción]()
-
+ - [Algoritmos de Ordenación - Burbuja Bidireccional]()
+ 
 ## Sesión 9
  - 20 Febrero 2019
+ - [Algoritmos de Ordenación - Inserción]()
+ 
+## Sesión 9
+ - 25 Febrero 2019 
  - [Algoritmos de Búsqueda - Busqueda dicotómica]()
