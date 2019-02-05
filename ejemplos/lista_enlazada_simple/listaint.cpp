@@ -24,6 +24,17 @@ void ListaInt::push_back(int value){
     size++;
 }
 
+void ListaInt::push_front(int value){
+    ListaInt* aux = new ListaInt(value);
+    //si hay un elemento a continuacion
+    if(next){
+        aux->setNext(next);
+    }
+    next = aux;
+    size++;
+}
+
+
 int & ListaInt::getDato()
 {
     return dato;
@@ -31,6 +42,7 @@ int & ListaInt::getDato()
 
 void ListaInt::printAll() const
 {
+    cout << "Size: " << size << endl;
     if(next) next->print();
     else cout << "Lista vacia" << endl;
 }
@@ -42,23 +54,40 @@ int &ListaInt::at(unsigned int i)
 
 ListaInt *ListaInt::refAt(unsigned int i) const
 {
-    if(i <= 0) throw string("out of bounds (starts with 1)");
+    if(i == 0) throw string("out of bounds (starts with 1)");
     if(i > size) throw string("Index is out of bounds");
     ListaInt * aux = next;
     unsigned short index = 0;
     while(aux){
         index++;
         if(index == i) return aux;
-        aux = aux->getNext();
+        aux = aux->next;
     }
     throw string("Unexpected error");
 }
+
+
 
 void ListaInt::print(int i) const
 {
     cout << i << ": " << dato << endl;
     if(next) next->print(++i);
     else cout << endl;
+}
+
+unsigned int ListaInt::getSize() const
+{
+    return size;
+}
+
+ListaInt *ListaInt::getNext() const
+{
+    return next;
+}
+
+void ListaInt::setNext(ListaInt *value)
+{
+    next = value;
 }
 
 
@@ -81,20 +110,20 @@ bool ListaInt::erase(int value)
     if(next){
         // si el siguiente es el dato buscado, lo elimino
         if(next->getDato() == value){
-            ListaInt* aux = next->getNext(); //guardo referencia del elemento posterior
+            ListaInt* aux = next->next; //guardo referencia del elemento posterior
             delete next; // borro el elemento deseado (libero su espacio en memoria)
             next = aux; // actualizo next para que apunte al elemento posterior
+            size--;
             return true; // devuelvo verdadero
         }
         //en caso contrario sigue buscando
-        else return next->erase(value);
+        else{
+            bool exit = next->erase(value);
+            if(exit) size--;
+            return exit;
+        }
     }else{
         // si he llegado al ultimo sin encontrarlo devuelvo falso
         return false;
     }
-}
-
-ListaInt *ListaInt::getNext() const
-{
-    return next;
 }
