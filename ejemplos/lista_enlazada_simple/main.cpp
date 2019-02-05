@@ -11,6 +11,7 @@ void showMenu(){
     cout << "(b) Borrar un elemento de la lista." << endl;
     cout << "(m) Modificar un elemento de la lista. " << endl;
     cout << "(v) Mover un elemento de la lista. " << endl;
+    cout << "(r) Recorrer " << endl;
     cout << "(i) Imprimir la lista por pantalla." << endl;
     cout << "(x) Salir" << endl;
     cout << "------------------------------" << endl;
@@ -54,6 +55,19 @@ int main()
                 cout << "A que posicion desea moverlo: ";
                 cin >> aux2;
                 move(&lista, aux, aux2);
+                break;
+
+            case 'r':
+                cout << "Recorrer por índice: " << endl;
+                for(unsigned int i {1}; i <= lista.getSize(); i++){
+                    cout << i << ": " << lista.at(i) << endl;
+                }
+
+                cout << "Recorrer por puntero: " << endl;
+                for(ListaInt* it = lista.getNext(); it != nullptr; it = it->getNext()){
+                    cout << it->getDato() << endl;
+                }
+
                 break;
 
             case 'i':
