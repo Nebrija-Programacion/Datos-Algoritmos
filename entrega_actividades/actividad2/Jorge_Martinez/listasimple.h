@@ -1,18 +1,15 @@
 #ifndef LISTASIMPLE_H
 #define LISTASIMPLE_H
 
-#endif // LISTASIMPLE_H
-
 #include <iostream>
+
 using namespace std;
 
 int size = 0;
 
 class ListaSimple{
 public:
-
-    ListaSimple(int _data = 0, string _cadena = ""): data{_data}, cadena{_cadena}{}
-
+    ListaSimple(int _data = 0, string _cadena = "");
     int getData() const;
     void setData(int value);
     ListaSimple *getNext() const;
@@ -21,7 +18,6 @@ public:
     void setSize(int value);
     string getCadena() const;
     void setCadena(const string &value);
-
     void push_back(int,string);
     void print();
     ListaSimple* greater_than(int);
@@ -36,3 +32,4 @@ private:
 
 };
 
+#endif
