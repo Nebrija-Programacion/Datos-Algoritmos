@@ -15,10 +15,10 @@ public:
     int getDato()const;
     ListaSimple *getNext()const;
     string getNombre()const;
-    ListaSimple *greater_than(int value);
-    ListaSimple *equal_to(int value);
-    ListaSimple *lesser_than(int value);
-    ListaSimple *within_interval(int value, int value1);
+    void greater_than(int value);
+    void equal_to(int value);
+    void lesser_than(int value);
+    void within_interval(int value, int value1);
     void push_back(int value, string nombre);
     void print();
 };

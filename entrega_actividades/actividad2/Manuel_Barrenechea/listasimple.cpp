@@ -23,7 +23,7 @@ string ListaSimple::getNombre() const
     return nombre;
 }
 
-ListaSimple *ListaSimple::greater_than(int value)
+void ListaSimple::greater_than(int value)
 {
     ListaSimple *aux = new ListaSimple{0, "Manuel"};
     ListaSimple *aux1 = this->next;
@@ -37,10 +37,9 @@ ListaSimple *ListaSimple::greater_than(int value)
             aux1 = aux1->next;
         }
     }
-    return aux;
 }
 
-ListaSimple *ListaSimple::equal_to(int value)
+void ListaSimple::equal_to(int value)
 {
     ListaSimple *aux = new ListaSimple{0, "Manuel"};
     ListaSimple *aux1 = this->next;
@@ -54,10 +53,9 @@ ListaSimple *ListaSimple::equal_to(int value)
             aux1 = aux1->next;
         }
     }
-    return aux;
 }
 
-ListaSimple *ListaSimple::lesser_than(int value)
+void ListaSimple::lesser_than(int value)
 {
     ListaSimple *aux = new ListaSimple{0, "Manuel"};
     ListaSimple *aux1 = this->next;
@@ -71,10 +69,9 @@ ListaSimple *ListaSimple::lesser_than(int value)
             aux1 = aux1->next;
         }
     }
-    return aux;
 }
 
-ListaSimple *ListaSimple::within_interval(int value, int value1)
+void ListaSimple::within_interval(int value, int value1)
 {
     ListaSimple *aux = new ListaSimple{0, "Manuel"};
     ListaSimple *aux1 = this->next;
@@ -88,7 +85,6 @@ ListaSimple *ListaSimple::within_interval(int value, int value1)
             aux1 = aux1->next;
         }
     }
-    return aux;
 }
 
 void ListaSimple::push_back(int value, string nombre)
