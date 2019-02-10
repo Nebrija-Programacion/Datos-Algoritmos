@@ -1,6 +1,6 @@
 # Actividad 2. Lista Enlazada Simple - Filtros
 
-Crear una lista enlazada simple de **números enteros** que contenga las siguientes funciones para filtrar:
+Crear una lista enlazada simple de **números enteros y cadenas de texto** que contenga las siguientes funciones para filtrar:
 
   - **greater_than** - Filtrar por numeros mayores de un valor
   - **equal_to** - Filtrar por numeros coincidentes 
