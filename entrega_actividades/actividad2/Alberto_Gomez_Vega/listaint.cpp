@@ -58,7 +58,7 @@ void ListaInt::lesser_than(int value) const{//No soy capaz de eliminar el elemnt
         }
     }
     cout <<"Los valores encontrados son: " << endl;
-    aux->print();
+    aux->printAll();
 }
 void ListaInt::within_interval(int value, int value2) const{//No soy capaz de eliminar el elemnto inicial = 0 de la búsqueda.
     ListaInt *aux=new ListaInt(0);
@@ -68,5 +68,5 @@ void ListaInt::within_interval(int value, int value2) const{//No soy capaz de el
         }
     }
     cout <<"Los valores encontrados son: " << endl;
-    aux->print();
+    aux->printAll();
 }
