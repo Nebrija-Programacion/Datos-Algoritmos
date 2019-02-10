@@ -1,29 +1,37 @@
 #ifndef LISTAINT_H
 #define LISTAINT_H
 
+#include <iostream>
 
-class ListaInt{
+using namespace std;
+
+
+class Lista{
 public:
-    ListaInt(int _dato = 0);
+    Lista(int _dato = 0);
+    Lista(Lista* other);
     void push_back(int value);
+    void push_back(Lista* node);
     void push_front(int value);
-    ListaInt* search(int value) const;
+    void push_front(Lista* node);
+    Lista* search(int value) const;
     bool erase(int value);
-    int &getDato();
     void printAll() const;
     int & at(unsigned int i);
-    ListaInt* refAt(unsigned int i) const;
+    Lista* refAt(unsigned int i) const;
     void setIndex(unsigned short value);
 
-    ListaInt *getNext() const;
-    void setNext(ListaInt *value);
+    Lista *getNext() const;
+    void setNext(Lista *value);
 
     unsigned int getSize() const;
+
+    int &getDato();
 
 private:
     void print(int i = 1) const;
     int dato;
-    ListaInt* next;
+    Lista* next;
     unsigned int size;
 };
 

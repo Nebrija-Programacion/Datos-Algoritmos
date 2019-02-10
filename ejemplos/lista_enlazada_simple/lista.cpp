@@ -1,10 +1,10 @@
-#include "listaint.h"
+#include "lista.h"
 
 #include <iostream>
 
 using namespace  std;
 
-ListaInt::ListaInt(int _dato):
+Lista::Lista(int _dato):
     dato{_dato},
     next{nullptr},
     size{0}
@@ -12,51 +12,66 @@ ListaInt::ListaInt(int _dato):
 
 }
 
-void ListaInt::push_back(int value){
+Lista::Lista(Lista *other):
+    next{nullptr},
+    size{0}
+{
+    dato = other->getDato();
+}
+
+void Lista::push_back(int value){
     //si hay un elemento a continuacion
+    Lista* node = new Lista(value);
+    push_back(node);
+}
+
+void Lista::push_back(Lista *node)
+{
     if(next){
-        next->push_back(value);
-    }else{ // soy el ultimo elemento
-        next = new ListaInt(value);
+        next->push_back(node);
+    }else{
+        next = node;
     }
 
-    // Incremento el tamano
     size++;
 }
 
-void ListaInt::push_front(int value){
-    ListaInt* aux = new ListaInt(value);
-    //si hay un elemento a continuacion
+void Lista::push_front(Lista* node){
     if(next){
-        aux->setNext(next);
+        node->setNext(next);
     }
-    next = aux;
+    next = node;
     size++;
 }
 
+void Lista::push_front(int value){
+    Lista* aux = new Lista(value);
+    push_front(aux);
+}
 
-int & ListaInt::getDato()
+
+int & Lista::getDato()
 {
     return dato;
 }
 
-void ListaInt::printAll() const
+void Lista::printAll() const
 {
     cout << "Size: " << size << endl;
     if(next) next->print();
     else cout << "Lista vacia" << endl;
 }
 
-int &ListaInt::at(unsigned int i)
+int &Lista::at(unsigned int i)
 {
     return refAt(i)->getDato();
 }
 
-ListaInt *ListaInt::refAt(unsigned int i) const
+Lista *Lista::refAt(unsigned int i) const
 {
     if(i == 0) throw string("out of bounds (starts with 1)");
     if(i > size) throw string("Index is out of bounds");
-    ListaInt * aux = next;
+    Lista * aux = next;
     unsigned short index = 0;
     while(aux){
         index++;
@@ -68,30 +83,30 @@ ListaInt *ListaInt::refAt(unsigned int i) const
 
 
 
-void ListaInt::print(int i) const
+void Lista::print(int i) const
 {
     cout << i << ": " << dato << endl;
     if(next) next->print(++i);
     else cout << endl;
 }
 
-unsigned int ListaInt::getSize() const
+unsigned int Lista::getSize() const
 {
     return size;
 }
 
-ListaInt *ListaInt::getNext() const
+Lista *Lista::getNext() const
 {
     return next;
 }
 
-void ListaInt::setNext(ListaInt *value)
+void Lista::setNext(Lista *value)
 {
     next = value;
 }
 
 
-ListaInt *ListaInt::search(int value) const
+Lista *Lista::search(int value) const
 {
     // si hay un elemento a continuacion
     if(next){
@@ -105,12 +120,12 @@ ListaInt *ListaInt::search(int value) const
     }
 }
 
-bool ListaInt::erase(int value)
+bool Lista::erase(int value)
 {
     if(next){
         // si el siguiente es el dato buscado, lo elimino
         if(next->getDato() == value){
-            ListaInt* aux = next->next; //guardo referencia del elemento posterior
+            Lista* aux = next->next; //guardo referencia del elemento posterior
             delete next; // borro el elemento deseado (libero su espacio en memoria)
             next = aux; // actualizo next para que apunte al elemento posterior
             size--;

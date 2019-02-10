@@ -3,14 +3,14 @@
 
 using namespace std;
 
-void move(ListaInt *lista, unsigned int ori, unsigned int dest)
+void move(Lista *lista, unsigned int ori, unsigned int dest)
 {
     if(ori == 0 || dest == 0) throw string("out of bounds (starts with 1)");
     if(ori > lista->getSize() || dest > lista->getSize()) throw string("Index is out of bounds");
 
-    ListaInt * auxOri = lista->getNext();
-    ListaInt * auxDest = lista->getNext();
-    ListaInt * prev = lista;
+    Lista * auxOri = lista->getNext();
+    Lista * auxDest = lista->getNext();
+    Lista * prev = lista;
 
     // go to position ori
     for (unsigned int index{1}; index < ori; index++){
@@ -30,4 +30,50 @@ void move(ListaInt *lista, unsigned int ori, unsigned int dest)
     // Place aux Ori after Dest
     auxOri->setNext(auxDest->getNext());
     auxDest->setNext(auxOri);
+}
+
+Lista *greaterThan(Lista* lista, int value)
+{
+    Lista* it = nullptr;
+    Lista* result = new Lista();
+    for(it = lista->getNext(); it != nullptr; it = it->getNext()){
+        if(it->getDato() > value) result->push_back(new Lista(it));
+    }
+
+    return result;
+
+}
+
+Lista *equalTo(Lista *lista, int value)
+{
+    Lista* it = nullptr;
+    Lista* result = new Lista();
+    for(it = lista->getNext(); it != nullptr; it = it->getNext()){
+        if(it->getDato() == value) result->push_back(new Lista(it));
+    }
+
+    return result;
+}
+
+Lista *lesserThan(Lista *lista, int value)
+{
+    Lista* it = nullptr;
+    Lista* result = new Lista();
+    for(it = lista->getNext(); it != nullptr; it = it->getNext()){
+        if(it->getDato() < value) result->push_back(new Lista(it));
+    }
+
+    return result;
+
+}
+
+Lista *within(Lista *lista, int value1, int value2)
+{
+    Lista* it = nullptr;
+    Lista* result = new Lista();
+    for(it = lista->getNext(); it != nullptr; it = it->getNext()){
+        if(it->getDato() > value1 && it->getDato() < value2) result->push_back(new Lista(it));
+    }
+
+    return result;
 }
