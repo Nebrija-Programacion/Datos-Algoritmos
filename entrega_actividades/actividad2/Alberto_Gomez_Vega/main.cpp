@@ -13,14 +13,14 @@ void showMenu(){
     cout << "------------------------------\n";
 }
 void showMenu2(){
-    cout << "------------------------------" << endl;
-    cout << "Que filtro quieres aplicar: " << endl;
+    cout << "------------------------------\n";
+    cout << "Que filtro quieres aplicar: \n";
     cout << "(a) Filtrar por numeros mayores de un valor.\n";
     cout << "(b) Filtrar por numeros coincidentes.\n";
     cout << "(c) Filtrar por numeros menores que un valor.\n";
     cout << "(d) Filtrar por numeros dentro de un intervalo.\n";
     cout << "(e) Salir.\n";
-    cout << "------------------------------" << endl;
+    cout << "------------------------------\n";
 }
 int main()
 {
@@ -32,12 +32,12 @@ int main()
         while(option != 'd'){
             switch(option){
             case 'a':
-                cout << "Introduce el valor deseado a la lista: ";
+                cout << "Introduce el valor deseado a la lista: \n";
                 cin >> respuesta1;
                 lista.push_back(respuesta1);
                 break;
             case 'b':
-                cout << "Los elementos de la lista son: " << endl;
+                cout << "Los elementos de la lista son: \n";
                 lista.printAll();
                 break;
             case 'c':
@@ -74,7 +74,7 @@ int main()
             showMenu();
             cin >> option;
         }
-        cout << "Hasta luego!" << endl;
+        cout << "Hasta luego! \n";
         return 0;
     }catch(string e){
         cout << e << endl;
