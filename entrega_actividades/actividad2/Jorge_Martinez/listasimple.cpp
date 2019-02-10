@@ -3,83 +3,10 @@
 
 using namespace std;
 
-ListaSimple::ListaSimple(int _data, string _cadena)
-{
+ListaSimple::ListaSimple(int _data){
     data = _data;
-    cadena = _cadena;
-}
-
-ListaSimple * ListaSimple::within_interval(int value1, int value2){
-    ListaSimple* iterator = this;
-    ListaSimple* listado = new ListaSimple();
-    int i = 0;
-    int mayor,menor;
-
-    if(value1 > value2){
-        mayor = value1;
-        menor = value2;
-    }else {
-        mayor = value2;
-        menor = value1;
-    }
-
-    while(iterator->getNext()){
-        iterator = iterator->getNext();
-
-        if(iterator->getData() < mayor && iterator->getData() > menor){
-            listado->push_back(iterator->getData(),iterator->getCadena());
-        }
-        i++;
-    }
-    return listado;
-}
-
-ListaSimple* ListaSimple::equal_to(int value){
-    ListaSimple* iterator = this;
-    ListaSimple* listado = new ListaSimple();
-    int i = 0;
-
-    while(iterator->getNext()){
-        iterator = iterator->getNext();
-
-        if(iterator->getData() == value){
-            listado->push_back(iterator->getData(),iterator->getCadena());
-        }
-        i++;
-    }
-    return listado;
-}
-
-ListaSimple* ListaSimple::lesser_than(int value){
-    ListaSimple* iterator = this;
-    ListaSimple* listado = new ListaSimple();
-    int i = 0;
-
-    while(iterator->getNext()){
-        iterator = iterator->getNext();
-
-        if(iterator->getData() < value){
-            listado->push_back(iterator->getData(),iterator->getCadena());
-        }
-        i++;
-    }
-    return listado;
-}
-
-ListaSimple* ListaSimple::greater_than(int value){
-    ListaSimple* iterator = this;
-    ListaSimple* listado = new ListaSimple();
-    int i = 0;
-
-    while(iterator->getNext()){
-        iterator = iterator->getNext();
-
-        if(iterator->getData() > value){
-            listado->push_back(iterator->getData(),iterator->getCadena());
-        }
-        i++;
-    }
-    return listado;
+    cadena ="";
+    setNext(nullptr);
 }
 
 void ListaSimple::print(){
@@ -101,7 +28,8 @@ void ListaSimple::push_back(int value, string word){
         iterador = iterador->getNext();
     }
 
-    iterador->setNext(new ListaSimple(value,word));
+    iterador->setNext(new ListaSimple(value));
+    getNext()->setCadena(word);
     size++;
 }
 

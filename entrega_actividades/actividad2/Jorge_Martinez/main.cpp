@@ -1,5 +1,6 @@
 #include <iostream>
 #include "listasimple.h"
+#include "listasimple.cpp"
 
 using namespace std;
 
@@ -8,7 +9,8 @@ int main(int argc, char *argv[])
 {
     int option, valor1, valor2;
     string texto;
-    ListaSimple* lista = new ListaSimple();
+    ListaSimple* miLista;
+    miLista = new ListaSimple();
 
     do{
         cout << "Inserte numero para seleccionar la opcion deseada: " <<endl;
@@ -29,28 +31,28 @@ int main(int argc, char *argv[])
                 cin >> valor1;
                 cout << "Inserte la cadena de texto del nuevo elemento: ";
                 cin >> texto;
-                lista->push_back(valor1,texto);
+                miLista->push_back(valor1,texto);
                 cout << endl;
                 break;
 
             case 2:
-                lista->print();
+                miLista->print();
                 break;
 
             case 3:
                 cout << "Inserte el valor numerico con el que desea filtrar la lista: ";
                 cin >> valor1;
-                lista->greater_than(valor1)->print();
+                miLista->greater_than(valor1)->print();
                 break;
             case 4:
                 cout << "Inserte el valor numerico con el que desea filtrar la lista: ";
                 cin >> valor1;
-                lista->lesser_than(valor1)->print();
+                miLista->lesser_than(valor1)->print();
                 break;
             case 5:
                 cout << "Inserte el valor numerico con el que desea filtrar la lista: ";
                 cin >> valor1;
-                lista->equal_to(valor1)->print();
+                miLista->equal_to(valor1)->print();
                 break;
             case 6:
                 cout << "Inserte el primer valor numerico del intervalo con el que desea filtrar la lista: ";
@@ -58,11 +60,84 @@ int main(int argc, char *argv[])
                 cout <<endl;
                 cout << "Inserte el segundo valor numerico del intervalo con el que desea filtrar la lista: ";
                 cin >> valor2;
-                lista->within_interval(valor1,valor2)->print();
+                miLista->within_interval(valor1,valor2)->print();
                 break;
             case 7:
                 cout << "Hasta pronto!" <<endl;
                 break;
         }
     }while(option != 7);
+}
+
+ListaSimple * ListaSimple::within_interval(int value1, int value2){
+    ListaSimple* iterator = this;
+    ListaSimple* listado = new ListaSimple();
+    int i = 0;
+    int mayor,menor;
+
+    if(value1 > value2){
+        mayor = value1;
+        menor = value2;
+    }else {
+        mayor = value2;
+        menor = value1;
+    }
+
+    while(iterator->getNext()){
+        iterator = iterator->getNext();
+
+        if(iterator->getData() < mayor && iterator->getData() > menor){
+            listado->push_back(iterator->getData(),iterator->getCadena());
+        }
+        i++;
+    }
+    return listado;
+}
+
+ListaSimple* ListaSimple::equal_to(int value){
+    ListaSimple* iterator = this;
+    ListaSimple* listado = new ListaSimple();
+    int i = 0;
+
+    while(iterator->getNext()){
+        iterator = iterator->getNext();
+
+        if(iterator->getData() == value){
+            listado->push_back(iterator->getData(),iterator->getCadena());
+        }
+        i++;
+    }
+    return listado;
+}
+
+ListaSimple* ListaSimple::lesser_than(int value){
+    ListaSimple* iterator = this;
+    ListaSimple* listado = new ListaSimple();
+    int i = 0;
+
+    while(iterator->getNext()){
+        iterator = iterator->getNext();
+
+        if(iterator->getData() < value){
+            listado->push_back(iterator->getData(),iterator->getCadena());
+        }
+        i++;
+    }
+    return listado;
+}
+
+ListaSimple* ListaSimple::greater_than(int value){
+    ListaSimple* iterator = this;
+    ListaSimple* listado = new ListaSimple();
+    int i = 0;
+
+    while(iterator->getNext()){
+        iterator = iterator->getNext();
+
+        if(iterator->getData() > value){
+            listado->push_back(iterator->getData(),iterator->getCadena());
+        }
+        i++;
+    }
+    return listado;
 }

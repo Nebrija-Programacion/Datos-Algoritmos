@@ -9,7 +9,7 @@ int size = 0;
 
 class ListaSimple{
 public:
-    ListaSimple(int _data = 0, string _cadena = "");
+    ListaSimple(int _data=0);
     int getData() const;
     void setData(int value);
     ListaSimple *getNext() const;
