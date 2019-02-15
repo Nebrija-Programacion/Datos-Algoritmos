@@ -1,5 +1,9 @@
 # Estructura de Datos y Algoritmos
 
+##Ejemplos de estrcturas y algoritmos
+  * [Lista Enlazada Simple](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
+  * [Lista Enlazada Doble]
+
 ## Sesión 1 
  - 23 Enero 2019
  - [Punteros](https://codebin.cc/2018/11/11/leccion-14-punteros/)
@@ -39,7 +43,7 @@
 
 ## Sesión 6
  - 11 Febrero 2019
-   - [Lista doblemente enlazada]()
+   - Repaso Listas Enlazadas simples
    - Añadir elementos.
    - Buscar elementos.
    - Eliminar elementos.
@@ -48,13 +52,13 @@
  
 ## Sesión 7
  - 13 Febrero 2019
- - [Algoritmos de Ordenación - Burbuja]()
+ - [Lista Doblemente enlazada]()
 
 
 ## Práctica 1
   - 15 Febrero 2019
-  - Eliminar elementos duplicados de una lista.
-  - [Enunciado]()
+  - Listas doblemente enlazadas.
+  - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/blob/master/practicas/practica-I/readme.md)
   
 ## Sesión 8
  - 18 Febrero 2019
