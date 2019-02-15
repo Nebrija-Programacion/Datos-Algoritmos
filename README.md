@@ -2,7 +2,7 @@
 
 ##Ejemplos de estrcturas y algoritmos
   * [Lista Enlazada Simple](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
-  * [Lista Enlazada Doble]
+  * [Lista Doblemente Enlazada](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-doblemente-enlazada)
 
 ## Sesión 1 
  - 23 Enero 2019
