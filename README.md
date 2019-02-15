@@ -21,7 +21,7 @@
    
 ## Actividad para casa
   - [Actividad 1](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad1)
-  - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad1)
+  - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
 
 ## Sesión 4
  - 4 Febrero 2019
@@ -35,7 +35,7 @@
 
 ## Actividad para casa
   - [Actividad 2](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad2)
-  - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad2)
+  - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
 
 ## Sesión 6
  - 11 Febrero 2019
