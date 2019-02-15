@@ -1,6 +1,6 @@
 # Estructura de Datos y Algoritmos
 
-##Ejemplos de estrcturas y algoritmos
+## Ejemplos de estrcturas y algoritmos
   * [Lista Enlazada Simple](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
   * [Lista Doblemente Enlazada](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-doblemente-enlazada)
 
