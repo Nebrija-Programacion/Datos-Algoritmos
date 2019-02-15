@@ -19,7 +19,6 @@ public:
     void printAll() const;
     int & at(unsigned int i);
     Lista* refAt(unsigned int i) const;
-    void setIndex(unsigned short value);
 
     Lista *getNext() const;
     void setNext(Lista *value);

@@ -77,3 +77,22 @@ Lista *within(Lista *lista, int value1, int value2)
 
     return result;
 }
+
+void erase(Lista *lista, unsigned int index)
+{
+    if(index > lista->getSize()) throw string{"Out of bounds"};
+    // borrar a partir del segundo
+    if(index > 1){
+        Lista* toErase = lista->refAt(index);
+        Lista* prev = lista->refAt(index -1);
+
+        prev->setNext(toErase->getNext());
+        delete toErase;
+
+    // borrar el primero
+    }else if(index == 1){
+        Lista* toErase = lista->getNext();
+        lista->setNext(toErase->getNext());
+        delete toErase;
+    }
+}

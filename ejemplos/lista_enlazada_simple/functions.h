@@ -3,6 +3,7 @@
 
 #include "lista.h"
 
+void erase(Lista* lista, unsigned int index);
 void move(Lista* lista, unsigned int ori, unsigned int dest);
 Lista* greaterThan(Lista *lista, int value);
 Lista* equalTo(Lista *lista,int value);
