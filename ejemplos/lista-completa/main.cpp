@@ -9,25 +9,20 @@ using namespace std;
 
 int main()
 {
-   List list;
-   Data* d1 = new Data(4);
-   Data* d2 = new Data(2);
-   Data* d3 = new Data(1);
-   Data* d4 = new Data(3);
+    srand(time(NULL));
+    List list;
+    for(int i=0; i < 10; i++){
+        int v = rand()%100;
+        list.push_back(new Data(v));
+    }
 
-   list.push_back(d1);
-   list.push_back(d2);
-   list.push_back(d3);
-   list.push_back(d4);
+    cout << list << endl;
 
+    cout << "--------------" << endl;
 
-   cout << list << endl;
+    list.bubbleSort();
 
-   cout << "--------------" << endl;
-
-   list.bubbleSort();
-
-   cout << list << endl;
+    cout << list << endl;
 
     return 0;
 }

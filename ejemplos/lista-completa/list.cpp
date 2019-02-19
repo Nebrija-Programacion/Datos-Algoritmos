@@ -152,10 +152,7 @@ void List::bubbleSort()
 
         // if current node is smaller than previous
 
-        Node n1 = *it;
-        Node n2 = *(it->getPrev());
-        // if( it->getData()->getValue() < it->getPrev()->getData()->getValue() ){
-        if(n1 < n2){
+        if(*(it) < *(it->getPrev())){
            moveUp(it);
            continue;
         }
