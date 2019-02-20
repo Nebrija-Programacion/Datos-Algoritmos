@@ -3,6 +3,7 @@
 ## Ejemplos de estrcturas y algoritmos
   * [Lista Enlazada Simple](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
   * [Lista Doblemente Enlazada](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-doblemente-enlazada)
+  * [Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
 
 ## Sesión 1 
  - 23 Enero 2019
@@ -63,10 +64,12 @@
 ## Sesión 8
  - 18 Febrero 2019
  - [Algoritmos de Ordenación - Algoritmo de la Burbuja]()
+ - [Ejemplo Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
  
 ## Sesión 9
  - 20 Febrero 2019
  - [Algoritmos de Ordenación - Algortimo de la Burbuja]()
+ - [Ejemplo Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
 
 
 ## Actividad para casa
