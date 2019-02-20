@@ -62,12 +62,18 @@
   
 ## Sesión 8
  - 18 Febrero 2019
- - [Algoritmos de Ordenación - Burbuja Bidireccional]()
+ - [Algoritmos de Ordenación - Algoritmo de la Burbuja]()
  
 ## Sesión 9
  - 20 Febrero 2019
- - [Algoritmos de Ordenación - Inserción]()
- 
+ - [Algoritmos de Ordenación - Algortimo de la Burbuja]()
+
+
+## Actividad para casa
+  - [Actividad 3](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad3)
+  - [Solución]()
+
+
 ## Sesión 9
  - 25 Febrero 2019 
  - [Algoritmos de Búsqueda - Busqueda dicotómica]()
