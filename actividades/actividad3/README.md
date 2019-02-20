@@ -1,4 +1,4 @@
-# Actividad 2. Lista Enlazada Simple - Filtros
+# Actividad 3. Algoritmos de ordenación de la piedra
 
 Implementar sobre una lista doblemente enlazada el algoritmos de ordenación de la piedra, según el cual, los elemenos mayores "caen" al final de la lista. Al final la lista debe presentar los elementos ordenados de menor a mayor.
 
