@@ -5,9 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    functions.cpp \
-    lista.cpp
+    listaint.cpp
 
 HEADERS += \
-    functions.h \
-    lista.h
+    listaint.h

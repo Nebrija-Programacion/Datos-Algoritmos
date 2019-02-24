@@ -5,9 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    functions.cpp \
-    lista.cpp
+    listaenlazada.cpp
 
 HEADERS += \
-    functions.h \
-    lista.h
+    listaenlazada.h
