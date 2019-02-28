@@ -1,8 +1,10 @@
 #include <iostream>
+#include <time.h>
 
 #include "list.h"
 #include "node.h"
 #include "data.h"
+#include "functions.h"
 
 using namespace std;
 
@@ -16,6 +18,8 @@ int main()
         list.push_back(new Data(v));
     }
 
+    list.push_back(new Data(33));
+
     cout << list << endl;
 
     cout << "--------------" << endl;
@@ -24,5 +28,10 @@ int main()
 
     cout << list << endl;
 
+    Node* result = search(list.getFirst(), list.getLast(), 33, list.getSize());
+
+    cout << "--------------" << endl;
+
+    result->print();
     return 0;
 }
