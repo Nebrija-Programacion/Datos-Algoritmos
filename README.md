@@ -78,5 +78,12 @@
 
 
 ## Sesión 9
- - 25 Febrero 2019 
+ - 27 Febrero 2019 
  - [Algoritmos de Búsqueda - Busqueda dicotómica]()
+ - [Ejemplo Lista ordenada con búsqueda dicotómica]()
+ 
+ ## Práctica 2
+ - 1 Marzo 2019
+ - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-II)
+ 
+ 
