@@ -9,6 +9,10 @@
 using namespace std;
 
 
+bool operator* (Data a, Data b){
+    return true;
+}
+
 int main()
 {
     srand(time(NULL));
