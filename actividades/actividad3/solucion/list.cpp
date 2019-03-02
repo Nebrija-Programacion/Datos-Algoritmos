@@ -139,12 +139,12 @@ void List::moveUp(Node *n)
     }
 }
 void List::moveDown(Node *n) {
-    //node is already the first one, cannot be moved up
+    //node is already the last one, cannot be moved down
     if(n == last) return;
     
-    //node is the last one
+    //node is the first
     if(n == first){
-        if(n->getNext() == last){ // Prev node is first. There are only 2 nodes
+        if(n->getNext() == last){ // Next node is last. There are only 2 nodes
             last = n;
             first = n->getNext();
             n->setNext(nullptr);
