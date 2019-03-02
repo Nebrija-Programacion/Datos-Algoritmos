@@ -3,7 +3,7 @@
 ## Ejemplos de estrcturas y algoritmos
   * [Lista Enlazada Simple](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
   * [Lista Doblemente Enlazada](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-doblemente-enlazada)
-  * [Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
+  * [Lista con algoritmos de ordenación y búsqueda](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
 
 ## Sesión 1 
  - 23 Enero 2019
@@ -79,8 +79,8 @@
 
 ## Sesión 9
  - 27 Febrero 2019 
- - [Algoritmos de Búsqueda - Busqueda dicotómica]()
- - [Ejemplo Lista ordenada con búsqueda dicotómica]()
+ - [Algoritmos de Búsqueda - Busqueda dicotómica](https://es.wikipedia.org/wiki/Algoritmo_de_b%C3%BAsqueda)
+ - [Ejemplo Lista ordenada con búsqueda dicotómica](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
  
  ## Práctica 2
  - 1 Marzo 2019
