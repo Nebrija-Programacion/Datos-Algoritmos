@@ -86,4 +86,6 @@
  - 1 Marzo 2019
  - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-II)
  
- 
+ ## Actividad para casa
+  - [Actividad 4](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad4)
+  - [Solución]()
