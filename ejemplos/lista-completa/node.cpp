@@ -9,7 +9,8 @@ Node::Node(Data *d):
 
 Node::~Node()
 {
-    delete data;
+    if(data) delete data;
+    data = nullptr;
     if(next) delete next;
     next = nullptr;
 }

@@ -15,27 +15,36 @@ bool operator* (Data a, Data b){
 
 int main()
 {
+    try{
     srand(time(NULL));
     List list;
-    for(int i=0; i < 10; i++){
-        int v = rand()%100;
+    for(int i=0; i < 100000; i++){
+        int v = rand()%1000000;
         list.push_back(new Data(v));
     }
 
-    list.push_back(new Data(33));
+    int d = rand()%1000000;
 
-    cout << list << endl;
+    list.push_back(new Data(d));
+
+    // cout << list << endl;
 
     cout << "--------------" << endl;
 
     list.bubbleSort();
 
-    cout << list << endl;
+    cout << "Sorted" << endl;
+    // cout << list << endl;
 
-    Node* result = search(list.getFirst(), list.getLast(), 33, list.getSize());
+    cout << "Looking for " << d << endl;
+    Node* result = search(list.getFirst(), list.getLast(), d, list.getSize());
 
     cout << "--------------" << endl;
 
     result->print();
+    cout << "Done!" << endl;
     return 0;
+    }catch(string e){
+        cout << e << endl;
+    }
 }

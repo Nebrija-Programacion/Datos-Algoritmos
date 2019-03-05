@@ -25,12 +25,14 @@ void List::push_back(Data *d)
         last = n;
         first = n;
     }
+
     size++;
 }
 
 void List::push_front(Data *d)
 {
     Node * n = new Node(d);
+
     if(first){
         n->setNext(first);
         first->setPrev(n);
@@ -39,27 +41,57 @@ void List::push_front(Data *d)
         first = n;
         last = n;
     }
+
     size++;
 }
 
 Data *List::pop_back()
 {
-    Data* d = last->getData();
+    // empty list
+    if(last == nullptr) throw string{"Cannot pop back, empty list"};
+
+    // just one element
+    if(last == first){
+        Data* d = new Data{last->getData()};
+        delete first;
+        first = nullptr;
+        last = nullptr;
+        size = 0;
+        return d;
+    }
+
+    // more than one element
+    Data* d = new Data{last->getData()};
     last = last->getPrev();
     delete last->getNext();
     last->setNext(nullptr);
     size--;
-    return new Data{d};
+    return d;
 }
 
 Data *List::pop_front()
 {
-    Data* d = first->getData();
+    // empty list
+    if(first == nullptr) throw string{"Cannot pop front, empty list"};
+
+    // just one element
+    if(last == first){
+        Data* d = new Data{last->getData()};
+        delete first;
+        first = nullptr;
+        last = nullptr;
+        size = 0;
+        return d;
+    }
+
+    // more than one element
+
+    Data* d = new Data{first->getData()};
     first = first->getNext();
     delete first->getPrev();
     first->setPrev(nullptr);
     size--;
-    return new Data(d);
+    return d;
 }
 
 Node *List::getFirst() const
@@ -113,7 +145,6 @@ void List::moveUp(Node *n)
             last->setPrev(n);
             last->setNext(nullptr);
             n->setNext(last);
-
         }
     }
 
@@ -144,7 +175,6 @@ void List::bubbleSort()
     Node* it = first;
 
     while(it != nullptr){
-
         if(it == first){
             it = it->getNext();
             continue;
