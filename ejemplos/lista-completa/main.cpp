@@ -18,12 +18,12 @@ int main()
     try{
     srand(time(NULL));
     List list;
-    for(int i=0; i < 100000; i++){
-        int v = rand()%1000000;
+    for(int i=0; i < 10000; i++){
+        int v = rand()%100000;
         list.push_back(new Data(v));
     }
 
-    int d = rand()%1000000;
+    int d = rand()%100000;
 
     list.push_back(new Data(d));
 
