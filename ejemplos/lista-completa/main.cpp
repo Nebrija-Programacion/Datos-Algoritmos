@@ -4,7 +4,9 @@
 #include "list.h"
 #include "node.h"
 #include "data.h"
-#include "functions.h"
+#include "funcionesglobales.hpp"
+#include "tictoc.h"
+
 
 using namespace std;
 
@@ -17,25 +19,32 @@ int main()
 {
     srand(time(NULL));
     List list;
-    for(int i=0; i < 10; i++){
+    for(int i=0; i < 100; i++){
         int v = rand()%100;
         list.push_back(new Data(v));
     }
 
-    list.push_back(new Data(33));
 
-    cout << list << endl;
+
+
 
     cout << "--------------" << endl;
-
+    TicToc clock;
+    clock.tic();
     list.bubbleSort();
-
-    cout << list << endl;
-
-    Node* result = search(list.getFirst(), list.getLast(), 33, list.getSize());
-
+    cout << clock.toc();
+    TicToc clockk;
+    List lista;
+    for(int i=0; i < 100; i++){
+        int v = rand()%100;
+        list.push_back(new Data(v));
+    }
+    
+    clockk.tic();
+    searchDicotomica(list.getFirst(), list.getLast(),33,list.getSize());
+    
+    cout << clockk.toc();
     cout << "--------------" << endl;
 
-    result->print();
     return 0;
 }
