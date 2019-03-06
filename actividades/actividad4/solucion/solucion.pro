@@ -8,10 +8,12 @@ SOURCES += \
     data.cpp \
     node.cpp \
     list.cpp \
-    functions.cpp
+    functions.cpp \
+    tictoc.cpp
 
 HEADERS += \
     data.h \
     node.h \
     list.h \
-    functions.h
+    functions.h \
+    tictoc.h

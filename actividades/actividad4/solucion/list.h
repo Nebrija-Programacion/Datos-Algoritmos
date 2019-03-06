@@ -28,14 +28,12 @@ public:
     void setSize(unsigned int value);
 
     void moveUp(Node *n);
-    void moveDown(Node *n);
 
     void bubbleSort();
-    void stoneSort();
 
 private:
     Node* first;
-    Node* last;
+    Node *last;
     unsigned int size;
 };
 
