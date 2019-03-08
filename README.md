@@ -17,12 +17,10 @@
    - [Buscar elementos](https://codebin.cc/2019/01/27/2-listas-enlazadas-simples-buscar-elementos/)
    - [Eliminar elementos](https://codebin.cc/2019/01/27/3-listas-enlazadas-simples-eliminar-elementos/)
    
-
 ## Sesión 3
  - 30 Enero 2019
  - Listas enlazadas simples
    - [Acceder a elementos por índice](https://codebin.cc/2019/01/27/4-listas-enlazadas-simples-acceder-por-indice/)
-
    
 ## Actividad para casa
   - [Actividad 1](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad1)
@@ -50,7 +48,6 @@
    - Eliminar elementos.
    - Insertar elementos.
 
- 
 ## Sesión 7
  - 13 Febrero 2019
  - [Lista Doblemente enlazada]()
@@ -71,11 +68,9 @@
  - [Algoritmos de Ordenación - Algortimo de la Burbuja]()
  - [Ejemplo Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
 
-
 ## Actividad para casa
   - [Actividad 3](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad3)
   - [Solución]()
-
 
 ## Sesión 9
  - 27 Febrero 2019 
@@ -89,3 +84,15 @@
  ## Actividad para casa
   - [Actividad 4](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad4)
   - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad4/solucion)
+  
+ ## Sesión 10
+ - 4 Marzo 2019
+ - Algoritmo de ordenación de la burbuja bidireccional.
+
+ ## Sesión 10
+ - 6 Marzo 2019
+ - Arboles binarios ordenados: creación y búsqueda.
+
+ ## Práctica 2b
+ - 8 Marzo 2019
+ - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-IIb)
