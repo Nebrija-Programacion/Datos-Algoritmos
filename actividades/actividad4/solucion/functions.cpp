@@ -10,23 +10,15 @@ Node* getMiddleNode(Node* first, int size){
 
     }
 
-    if(it) return it;
-    else throw string{"Unexpected Error"};
-
+    return it;
 }
 
 Node *search(Node *first, Node *last, int dato, int size)
 {
-    if(first == nullptr || last == nullptr)
-        throw string{"Unexpected error"};
-
-
     if(dato == first->getData()->getValue()) return first;
     if(dato == last->getData()->getValue()) return last;
 
     Node* middle = getMiddleNode(first, size);
-
-    if(middle == nullptr) throw string{"Unexpected Error"};
 
     if(dato == middle->getData()->getValue()) return middle;
 

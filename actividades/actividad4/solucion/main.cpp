@@ -28,7 +28,7 @@ int main()
 {
     try{
         int range = 1000000000;
-        int size = 100000;
+        int size = 200000;
         srand(time(NULL));
         List list;
         for(int i=0; i < size; i++){
