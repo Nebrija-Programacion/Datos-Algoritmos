@@ -80,6 +80,8 @@
  ## Práctica 2
  - 1 Marzo 2019
  - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-II)
+ - [Solucion](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-II/solucion)
+
  
  ## Actividad para casa
   - [Actividad 4](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad4)
@@ -89,10 +91,16 @@
  - 4 Marzo 2019
  - Algoritmo de ordenación de la burbuja bidireccional.
 
- ## Sesión 10
+ ## Sesión 11
  - 6 Marzo 2019
  - Arboles binarios ordenados: creación y búsqueda.
+ - [Ejemplo](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/sorted_binary_tree)
 
  ## Práctica 2b
  - 8 Marzo 2019
  - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-IIb)
+ 
+ ## Sesión 12
+ - 11 Marzo 2019
+ - Arboles binarios: Recorrido en profundidad y amplitud.
+ - [Ejemplo](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/sorted_binary_tree)
