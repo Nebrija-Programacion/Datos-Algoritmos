@@ -28,4 +28,14 @@ Node *Tree::search(const Data &d)
     return nullptr;
 }
 
+Node *Tree::getFirst() const
+{
+    return first;
+}
+
+void Tree::depthFirstRun() const
+{
+    if(first) first->depthFirstRun();
+}
+
 

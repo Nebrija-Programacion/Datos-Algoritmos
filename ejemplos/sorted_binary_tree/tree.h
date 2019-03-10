@@ -11,6 +11,11 @@ public:
     void push(Data *d);
     Node* search(Data const & d);
 
+    Node *getFirst() const;
+    void depthFirstRun() const;
+    void breadthFirstRun() const;
+
+
 protected:
     Node* first;
 };
