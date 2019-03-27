@@ -7,6 +7,7 @@ class Node
 {
 public:
     Node(Humano *_humano);
+    ~Node();
 
     void print();
 
