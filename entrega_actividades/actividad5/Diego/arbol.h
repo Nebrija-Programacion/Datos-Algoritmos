@@ -7,6 +7,7 @@ class Arbol
 {
 public:
     Arbol();
+    ~Arbol();
 
     void print();
 
