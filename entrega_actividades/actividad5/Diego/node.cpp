@@ -9,6 +9,25 @@ Node::Node(Humano *_humano):
 
 }
 
+Node::~Node()
+{
+    if(this->getHijos().at(0)){
+        for(int i = 0; i < this->getHijos().size(); i++){
+            if(this->getHijos().at(i)->getVisitado() == false){
+                this->getHijos().at(i)->~Node();
+            }
+        }
+    }
+    if(this->getPadres().at(0)){
+        for(int i = 0; i < this->getPadres().size(); i++){
+            if(this->getPadres().at(i)->getVisitado() == false){
+                this->getPadres().at(i)->~Node();
+            }
+        }
+    }
+    delete this;
+}
+
 void Node::print()
 {
     this->getHuman()->print();
