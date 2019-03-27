@@ -64,12 +64,18 @@ int main()
     string apellido1 = "Rodriguez";
     string apellido2 = "Francisco";
 
-    /*
-    cout << "nombre, apellido, apellido dos" << endl;
-    cin >> nombre;
-    cin >> apellido1;
-    cin >> apellido2;
-    */
+    cout << "Para personalizar la busqueda pulse 1: " << endl;
+    int mm = 0;
+    cin >> mm;
+    if(mm == 1){
+        cout << "nombre, apellido, apellido dos" << endl;
+        cin >> nombre;
+        cin >> apellido1;
+        cin >> apellido2;
+    }
+
+    cout << endl << endl;
+
     ar.search(nombre, apellido1, apellido2);
 
     cout << endl << "FIN" << endl;
