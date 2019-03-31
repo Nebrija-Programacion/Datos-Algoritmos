@@ -1,23 +1,37 @@
 #ifndef NODE_H
 #define NODE_H
+#include <array>
+#include <vector>
 #include "data.h"
+using namespace std;
 
-class Node{
+class Node
+{
 public:
-    Node(Data *da);
+    Node(Data*d);
+    Data getNombre() const;
+    void setNombre(const Data &value);
 
-    Node *getNext() const;
-    void setNext(Node *value);
+    array<Node *, 2> getParents() const;
+    void setParents(const array<Node *, 2> &value);
 
-    Node *getPrev() const;
-    void setPrev(Node *value);
+    vector<Node *> getChildren() const;
+    void setChildren(const vector<Node *> &value);
 
-    Data *getDato() const;
-    void setDato(Data *value);
+    bool getVisitado() const;
+    void setVisitado(bool value);
+
+    void pushChild(Node* child);
+    void pushParent(Node *parent);
+    void search(Data &person);
+    void runThrough();
 
 private:
-    Node *next;
-    Node *prev;
-    Data *dato;
+    Data persona;
+    Data nombre;
+    array<Node*,2>parents;
+    vector<Node*>children;
+    bool visitado;
 };
+
 #endif // NODE_H

@@ -1,35 +1,104 @@
 #include "node.h"
-
-Node::Node(Data *da){
-    dato=da;
+Node::Node(Data *d)
+{
+   nombre=*d;
+   visitado=false;
 }
 
-Node *Node::getNext() const
+Data Node::getNombre() const
 {
-return next;
+    return nombre;
 }
 
-void Node::setNext(Node *value)
+void Node::setNombre(const Data &value)
 {
-next = value;
+    nombre = value;
 }
 
-Node *Node::getPrev() const
+array<Node *, 2> Node::getParents() const
 {
-return prev;
+    return parents;
 }
 
-void Node::setPrev(Node *value)
+void Node::setParents(const array<Node *, 2> &value)
 {
-prev = value;
+    parents = value;
 }
 
-Data *Node::getDato() const
+vector<Node *> Node::getChildren() const
 {
-return dato;
+    return children;
 }
 
-void Node::setDato(Data *value)
+void Node::setChildren(const vector<Node *> &value)
 {
-dato = value;
+    children = value;
+}
+
+bool Node::getVisitado() const
+{
+    return visitado;
+}
+
+void Node::setVisitado(bool value)
+{
+    visitado = value;
+}
+
+void Node::pushChild(Node *child)
+{
+    children.push_back(child);
+    child->pushParent(this);
+}
+
+void Node::pushParent(Node *parent)
+{
+    if(parents.at(0) && parents[1]){
+        throw string{"Noooo"};
+    }
+    if(parents[0]){
+        parents[1]=parent;
+    }
+    else{
+        parents[0]=parent;
+    }
+}
+
+void Node::search(Data &person)
+{
+    if(visitado){
+        return nullptr;
+    }
+    visitado=true;
+
+    if(persona==person){
+        return this;
+    }
+    for(auto* child:children){
+        Node* c=child->search(person);
+        if(c){
+            return c;
+        }
+    }
+    for(auto* parent:parents){
+        Node *p=parent->search(person);
+        if(p){
+            return p;
+        }
+    }
+
+}
+
+void Node::runThrough()
+{
+    if(visited) return;
+
+    visited=true;
+    cout<<persona<<endl;
+    for(auto* child:children){
+        child->runThrough();
+    }
+    for(auto* parent: parents){
+        if(parent) parent->runThrough();
+    }
 }
