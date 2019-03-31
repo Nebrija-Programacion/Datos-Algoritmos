@@ -1,36 +1,35 @@
 #include "persona.h"
-#include <iostream>
 
-using namespace std;
-
-persona::persona()
+Persona::Persona(string nombre, string apellido1, string apellido2):
+    nombre{nombre},
+    apellido1{apellido1},
+    apellido2{apellido2}
 {
 
 }
 
-void persona::Nombre()
+string Persona::getNombre() const
 {
-    cout << "Introduce tu nombre: "; cin >> nombre;
+    return nombre;
 }
 
-void persona::DNI()
+string Persona::getApellido1() const
 {
-    cout << "Introduce tu DNI: "; cin >> dni;
+    return apellido1;
 }
 
-void persona::Carrera()
+string Persona::getApellido2() const
 {
-    cout << "Introduce el nombre de tu carrera separado con - : "; cin >> carrera;
+    return apellido2;
 }
 
-
-void persona::imprimirDatos()
+ostream &operator <<(ostream &os, Persona p)
 {
-    cout << endl<< endl;
-    cout << "********DATOS DEL ALUMNO*********" <<endl;
-    cout << "CARRERA: " << carrera << endl;
-    cout << "NOMBRE: " << nombre << endl;
-    cout << "DNI: " << dni << endl;
+    os << p.nombre << " " << p.apellido1 << " " << p.apellido2;
+    return os;
+}
 
-
+bool operator == (const Persona &a, const Persona &b)
+{
+    return (a.getNombre() == b.getApellido2() && a.getApellido1() == b.getApellido1() || a.getNombre() == b.getNombre() && a.getApellido2() == b.getApellido2());
 }

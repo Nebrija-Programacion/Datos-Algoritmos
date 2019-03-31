@@ -1,25 +1,27 @@
 #ifndef PERSONA_H
 #define PERSONA_H
-
-//clase padre persona, porque engloba a los alumnos de todas las careras y los años
-
 #include <string>
+#include <iostream>
+
 using namespace std;
-class persona
+
+class Persona
 {
+    friend ostream & operator << (ostream & os, Persona p);
+    friend bool operator == (Persona const & a, Persona const &b);
 public:
-    persona();
-    //se utiliza void cuando el usuario tiene que introducir algun dato
-    void Nombre();
-    void DNI();
-    void Carrera();
-    void imprimirDatos();
+    Persona(string nombre, string apellido1, string apellido2);
+
+    string getNombre() const;
+    string getApellido1() const;
+    string getApellido2() const;
 private:
-    /* se utiliza string cuando se trata de caracteres (no ppueden ir separa dos con espacion)
-    son los datos que se van a pedir y se declaran en el private*/
     string nombre;
-    string dni;
-    string carrera;
+    string apellido1;
+    string apellido2;
 };
+
+ostream & operator << (ostream & os, Persona p);
+bool operator == (Persona const & a, Persona const & b);
 
 #endif // PERSONA_H

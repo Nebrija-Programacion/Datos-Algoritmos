@@ -1,93 +1,92 @@
 #include <iostream>
-#include "gradoini1.h"
-#include "gradoini2.h"
-#include "gradomod1.h"
-#include "gradomod2.h"
 #include "persona.h"
+#include "node.h"
+#include "arbolgen.h"
 
 using namespace std;
 
 int main()
 {
 
-    persona h;
-    gradoINI1 e;
-    gradoINI2 g;
-    gradoMOD1 m;
-    gradoMOD2 k;
-    int op;
+    string nombre, apellido1, apellido2;
+    int respuesta = 0;
 
-    cout << "******** ALUMNOS NEBRIJA *********" << endl;
-    cout << "1) En que curso estas? " << endl;
-    cout << "Introduce un 1 (primero) o un 2 (segundo): ";
-    cin >> op;
+    ArbolGen e;
 
+    cout << "************ ARBOL GENEALOGICO *************" << endl << endl;
 
-    if(op == 1){
+    ArbolGen arbol;
+    Node* yo = new Node(Persona("Maria", "Gonzalez", "Herrero"));
 
+    arbol.setYo(yo);
 
+    //Abuelos paternos
+    Node * ab1 = new Node(Persona("Loli", "Ruiz", "Macho"));
+    Node * ab2 = new Node(Persona("Epifanio", "Gonzalez", "Polvorosa "));
 
-        int op1;
-        cout << "Si estudias informatica (11) si estudias moda (12): "; cin >> op1;
-        if(op1 == 11){
+    //Hijos de los abuelos paternos
+    Node* ab12child1 = new Node(Persona("Loli", "Gonzalez", "Ruiz"));
+    Node* ab12child2 = new Node(Persona("Pablo", "Gonzalez", "Ruiz"));
+    Node* ab12child3 = new Node(Persona("Javier", "Gonzalez", "Ruiz"));
+    Node* ab12child4 = new Node(Persona("Carlos", "Gonzalez", "Ruiz"));
 
-            h.Carrera();
-            h.DNI();
-            h.Nombre();
-            e.establecerNotas();
-            e.mostrar1i();
+    ab1-> pushChild(ab12child1);
+    ab2-> pushChild(ab12child1);
 
-            h.imprimirDatos();
-            e.imprimirDatos();
-        }else{
-            if (op1 == 12){
-                h.Carrera();
-                h.DNI();
-                h.Nombre();
-                m.establecerNotas();
-                m.mostrar1i();
+    ab1-> pushChild(ab12child2);
+    ab2-> pushChild(ab12child2);
 
-                h.imprimirDatos();
-                m.imprimirDatos();
-            }
+    ab1-> pushChild(ab12child3);
+    ab2-> pushChild(ab12child3);
 
-        }
+    ab1-> pushChild(ab12child4);
+    ab2-> pushChild(ab12child4);
 
+   //Abuelos maternos
+    Node * ab3 = new Node(Persona("Cayo", "Herrero", "Casado"));
+    Node * ab4 = new Node(Persona("Natividad", "Antolin", "Castro"));
+
+    //Hijos de los abuelos maternos
+    Node* ab34child1 = new Node(Persona("Cayo", "Herrero2", "Antolin"));
+    Node* ab34child2 = new Node(Persona("Nati", "Herrero", "Antolin"));
+
+    ab3-> pushChild(ab34child1);
+    ab4-> pushChild(ab34child1);
+
+    ab3-> pushChild(ab34child2);
+    ab4-> pushChild(ab34child2);
+
+    //Nietos (Hijas de Nati y Javier)
+    Node* ana = new Node(Persona("Ana", "Gonzalez", "Herrero"));
+
+    ab12child3->pushChild(yo);
+    ab34child2->pushChild(yo);
+
+    ab12child3->pushChild(ana);
+    ab34child2->pushChild(ana);
+
+    yo->runThrough(0);
+
+    cout << "-PARA BUSCAR A UN MIENBRO DE LA FAMILIA pulsa 1:";
+    cin >> respuesta;
+    cout << endl;
+
+    if(respuesta == 1){
+        cout << " Introduce su nombre y sus dos apellidos " << endl;
+        cout << " -----------------------------------------" << endl;
+        cout << "1.- NOMBRE: ";
+        cin >> nombre;
+        cout << "2.- PRIMER APELLIDO: ";
+        cin >> apellido1;
+        cout << "3.- SEGUNDO APELLIDO: ";
+        cin >> apellido2;
 
     }
 
-    else{
-        if(op == 2){
-        }
-        int op2;
-        cout << "Si estudias informatica (21) si estudias moda (22): "; cin >> op2;
-        if (op2 == 21){
-            h.Carrera();
-            h.DNI();
-            h.Nombre();
-            g.establecerNotas();
-            g.mostrar1i();
+    cout << endl << endl;
 
-            h.imprimirDatos();
-            g.imprimirDatos();
-        }else{
-            if (op2 == 22){
-                h.Carrera();
-                h.DNI();
-                h.Nombre();
-                k.establecerNotas();
-                k.mostrar1i();
 
-                h.imprimirDatos();
-                k.imprimirDatos();
-            }
-        }
 
-    }
+
     return 0;
 }
-
-
-
-
-
