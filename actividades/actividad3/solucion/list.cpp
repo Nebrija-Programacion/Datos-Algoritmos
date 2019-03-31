@@ -25,14 +25,12 @@ void List::push_back(Data *d)
         last = n;
         first = n;
     }
-
     size++;
 }
 
 void List::push_front(Data *d)
 {
     Node * n = new Node(d);
-
     if(first){
         n->setNext(first);
         first->setPrev(n);
@@ -41,57 +39,27 @@ void List::push_front(Data *d)
         first = n;
         last = n;
     }
-
     size++;
 }
 
 Data *List::pop_back()
 {
-    // empty list
-    if(last == nullptr) throw string{"Cannot pop back, empty list"};
-
-    // just one element
-    if(last == first){
-        Data* d = new Data{last->getData()};
-        delete first;
-        first = nullptr;
-        last = nullptr;
-        size = 0;
-        return d;
-    }
-
-    // more than one element
-    Data* d = new Data{last->getData()};
+    Data* d = last->getData();
     last = last->getPrev();
     delete last->getNext();
     last->setNext(nullptr);
     size--;
-    return d;
+    return new Data{d};
 }
 
 Data *List::pop_front()
 {
-    // empty list
-    if(first == nullptr) throw string{"Cannot pop front, empty list"};
-
-    // just one element
-    if(last == first){
-        Data* d = new Data{last->getData()};
-        delete first;
-        first = nullptr;
-        last = nullptr;
-        size = 0;
-        return d;
-    }
-
-    // more than one element
-
-    Data* d = new Data{first->getData()};
+    Data* d = first->getData();
     first = first->getNext();
     delete first->getPrev();
     first->setPrev(nullptr);
     size--;
-    return d;
+    return new Data(d);
 }
 
 Node *List::getFirst() const
@@ -145,6 +113,7 @@ void List::moveUp(Node *n)
             last->setPrev(n);
             last->setNext(nullptr);
             n->setNext(last);
+
         }
     }
 
@@ -169,12 +138,59 @@ void List::moveUp(Node *n)
         }
     }
 }
+void List::moveDown(Node *n) {
+    //node is already the last one, cannot be moved down
+    if(n == last) return;
+    
+    //node is the first
+    if(n == first){
+        if(n->getNext() == last){ // Next node is last. There are only 2 nodes
+            last = n;
+            first = n->getNext();
+            n->setNext(nullptr);
+            first->setPrev(nullptr);
+            last->setPrev(first);
+            first->setNext(last);
+        }else{
+            first = n->getNext();
+            n->setNext(first->getNext());
+            first->getNext()->setPrev(n);
+            first->setNext(n);
+            first->setPrev(nullptr);
+            n->setPrev(first);
+            
+        }
+    }
+    
+    if(n != first){
+        if(n->getNext() != last){
+            Node* aux1 = n->getNext()->getNext();
+            Node* aux2 = n->getPrev();
+            n->getNext()->setPrev(aux2);
+            aux2->setNext(n->getNext());
+            aux1->setPrev(n);
+            n->setNext(aux1);
+            n->setPrev(aux2->getNext());
+            n->getPrev()->setNext(n);
+        }else{
+            Node* aux = n->getPrev();
+            last->setPrev(aux);
+            aux->setNext(last);
+            n->setPrev(last);
+            n->setNext(nullptr);
+            last->setNext(n);
+            last = n;
+        }
+    }
+}
+
 
 void List::bubbleSort()
 {
     Node* it = first;
 
     while(it != nullptr){
+
         if(it == first){
             it = it->getNext();
             continue;
@@ -182,9 +198,9 @@ void List::bubbleSort()
 
         // if current node is smaller than previous
 
-        Node* current = it;
+        Node* bubble = it;
         Node* prev = it->getPrev();
-        if( *current < *prev){
+        if( * bubble < *prev){
            moveUp(it);
            continue;
         }
@@ -192,6 +208,29 @@ void List::bubbleSort()
         it = it->getNext();
     }
 }
+
+void List::stoneSort()
+{
+    Node* it = last;
+    while(it != nullptr){
+        if(it == last){
+            it = it->getPrev();
+            continue;
+        }
+        Node* stone = it;
+        Node* next = it->getNext();
+        if(*stone > *next){
+            moveDown(it);
+            continue;
+        }
+        it = it->getPrev();
+    }
+}
+
+
+
+
+
 
 
 ostream & operator<<(ostream &os, const List &l)

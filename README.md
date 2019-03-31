@@ -3,7 +3,7 @@
 ## Ejemplos de estrcturas y algoritmos
   * [Lista Enlazada Simple](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista_enlazada_simple)
   * [Lista Doblemente Enlazada](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-doblemente-enlazada)
-  * [Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
+  * [Lista con algoritmos de ordenación y búsqueda](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
 
 ## Sesión 1 
  - 23 Enero 2019
@@ -17,12 +17,10 @@
    - [Buscar elementos](https://codebin.cc/2019/01/27/2-listas-enlazadas-simples-buscar-elementos/)
    - [Eliminar elementos](https://codebin.cc/2019/01/27/3-listas-enlazadas-simples-eliminar-elementos/)
    
-
 ## Sesión 3
  - 30 Enero 2019
  - Listas enlazadas simples
    - [Acceder a elementos por índice](https://codebin.cc/2019/01/27/4-listas-enlazadas-simples-acceder-por-indice/)
-
    
 ## Actividad para casa
   - [Actividad 1](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad1)
@@ -50,7 +48,6 @@
    - Eliminar elementos.
    - Insertar elementos.
 
- 
 ## Sesión 7
  - 13 Febrero 2019
  - [Lista Doblemente enlazada]()
@@ -71,12 +68,39 @@
  - [Algoritmos de Ordenación - Algortimo de la Burbuja]()
  - [Ejemplo Lista con algoritmos de ordenación](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
 
-
 ## Actividad para casa
   - [Actividad 3](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad3)
   - [Solución]()
 
-
 ## Sesión 9
- - 25 Febrero 2019 
- - [Algoritmos de Búsqueda - Busqueda dicotómica]()
+ - 27 Febrero 2019 
+ - [Algoritmos de Búsqueda - Busqueda dicotómica](https://es.wikipedia.org/wiki/Algoritmo_de_b%C3%BAsqueda)
+ - [Ejemplo Lista ordenada con búsqueda dicotómica](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/lista-completa)
+ 
+ ## Práctica 2
+ - 1 Marzo 2019
+ - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-II)
+ - [Solucion](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-II/solucion)
+
+ 
+ ## Actividad para casa
+  - [Actividad 4](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad4)
+  - [Solución](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/actividades/actividad4/solucion)
+  
+ ## Sesión 10
+ - 4 Marzo 2019
+ - Algoritmo de ordenación de la burbuja bidireccional.
+
+ ## Sesión 11
+ - 6 Marzo 2019
+ - Arboles binarios ordenados: creación y búsqueda.
+ - [Ejemplo](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/sorted_binary_tree)
+
+ ## Práctica 2b
+ - 8 Marzo 2019
+ - [Enunciado](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/practicas/practica-IIb)
+ 
+ ## Sesión 12
+ - 11 Marzo 2019
+ - Arboles binarios: Recorrido en profundidad y amplitud.
+ - [Ejemplo](https://github.com/Nebrija-Programacion/Datos-Algoritmos/tree/master/ejemplos/sorted_binary_tree)

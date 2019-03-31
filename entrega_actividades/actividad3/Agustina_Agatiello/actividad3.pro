@@ -6,12 +6,10 @@ CONFIG -= qt
 SOURCES += \
         main.cpp \
     data.cpp \
-    node.cpp \
     list.cpp \
-    functions.cpp
+    node.cpp
 
 HEADERS += \
     data.h \
-    node.h \
     list.h \
-    functions.h
+    node.h

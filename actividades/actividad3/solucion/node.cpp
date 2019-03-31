@@ -9,8 +9,7 @@ Node::Node(Data *d):
 
 Node::~Node()
 {
-    if(data) delete data;
-    data = nullptr;
+    delete data;
     if(next) delete next;
     next = nullptr;
 }
@@ -53,9 +52,8 @@ void Node::print() const
 
 bool operator<(Node const & n1, Node const & n2)
 {
-    Data d1 = *(n1.getData());
-    Data d2 = *(n2.getData());
-    return ( d1 < d2 );
+    return ( n1.getData()->getValue() <
+             n2.getData()->getValue()   );
 }
 
 
