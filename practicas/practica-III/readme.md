@@ -1,4 +1,4 @@
-# PRÁCTICA II
+# PRÁCTICA III
 
 Se desea crear un grafo con nodos ubicados en determinadas coordenadas. En cada nodo se almacena.
 - Nombre del nodo; A,B,C, etc.
