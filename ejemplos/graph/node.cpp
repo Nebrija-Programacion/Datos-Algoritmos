@@ -18,12 +18,12 @@ void Node::setData(Data *value)
     data = value;
 }
 
-vector<Node *> Node::getNeighbours() const
+set<Node *> Node::getNeighbours() const
 {
     return neighbours;
 }
 
-void Node::setNeighbours(const vector<Node *> &value)
+void Node::setNeighbours(const set<Node *> &value)
 {
     neighbours = value;
 }
@@ -46,13 +46,7 @@ void Node::resetVisited(){
 
 void Node::addNeighbour(Node * n)
 {
-    // check if n is already a neighbour
-    for(auto p:neighbours){
-        if(n == p) return;
-    }
-
-    neighbours.push_back(n);
-
+    neighbours.insert(n);
 }
 
 Node* Node::computePath(Node *dest)

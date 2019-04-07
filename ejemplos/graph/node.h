@@ -1,7 +1,8 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include <vector>
+#include <set>
+
 #include "data.h"
 
 using namespace std;
@@ -19,8 +20,8 @@ public:
     Data *getData() const;
     void setData(Data *value);
 
-    vector<Node *> getNeighbours() const;
-    void setNeighbours(const vector<Node *> &value);
+    set<Node *> getNeighbours() const;
+    void setNeighbours(const set<Node *> &value);
 
 protected:
     void printAll();
@@ -30,7 +31,7 @@ protected:
     void printPath();
 
 private:
-    vector<Node*> neighbours;
+    set<Node *> neighbours;
     Data* data;
     bool visited;
     Node* next;
