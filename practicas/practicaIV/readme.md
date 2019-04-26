@@ -1,6 +1,6 @@
 # PRÁCTICA IV
 
-Se desea crear un grafo templatizado con nodos ubicados en determinadas coordenadas. En cada nodo se almacena.
+Se desea crear un grafo con nodos ubicados en determinadas coordenadas. En cada nodo se almacena.
 - Nombre del nodo; A,B,C, etc.
 - Coordenadas x,y del nodo.
 
