@@ -11,7 +11,7 @@ Node::Node(unsigned int data):
 void Node::push(Node *n)
 {
     // Multiplo
-    if(n->getData() % data == 0){
+    if(n->getData() % data == 0 || n->getData() == data){
         if(children.at(0)) children.at(0)->push(n);
         else{
             children.at(0) = n;
